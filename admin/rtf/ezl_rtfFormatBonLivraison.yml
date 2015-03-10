@@ -1,0 +1,128 @@
+---
+tableHaut: 
+  largeur colonnes: 
+    - 7
+    - 11
+  hauteur lignes: 
+    - 3
+    - 5
+  zones: 
+    table entière: 
+    infos société 1: 
+      police: 
+        taille: 11
+      chemin donnees: 
+        - /rapport/societe/@nom
+        - /rapport/societe/adresse/rue
+        - /rapport/societe/adresse/ville
+    infos société 2: 
+      position: 
+        ligne début: 1
+      police: 
+        taille: 11
+      chemin donnees: 
+        - /rapport/societe/infos
+    infos document: 
+      position: 
+        colonne début: 2
+      chemin donnees: 
+        - /rapport/document/intitules/rappelsHautDePage
+        - /rapport/document/@numero
+        - +[\t\t]/rapport/document/@date
+        - +[\t\t]/rapport/client/@numero
+    adresse destinataire: 
+      position: 
+        ligne début: 2
+        colonne début: 2
+      paragraphe: 
+        espace avant: 20
+        indentation gauche: 3
+      chemin donnees: 
+        - /rapport/client/livraison/entreprise
+        - /rapport/client/livraison/nom		
+        - /rapport/client/livraison/adresse/rue
+        - /rapport/client/livraison/adresse/codepostal
+        - +[\t]/rapport/client/livraison/adresse/ville
+tableReference: 
+  largeur colonnes: 
+    - 18
+  hauteur lignes: 
+    - 0.5
+  zones: 
+    table entière: 
+      police: 
+        taille: 12
+      couleur fond: "#D2D2D2"
+      bordure: 
+        taille: 1
+        couleur: "#000000"
+      chemin donnees: 
+        - /rapport/document/reference
+        - +[\t]/rapport/client/livraison/ref
+tableArticles: 
+  largeur colonnes: 
+    - 3.5	
+    - 10
+    - 2	
+    - 2
+  hauteur lignes: 
+    - 1
+    - -0.6*
+    - 0.8
+  zones: 
+    table entière: 
+      position: 
+        nombre lignes: nombre lignes
+        nombre colonnes: 4
+      police: 
+        taille: 11
+      bordure: 
+        taille: 1
+        couleur: "#555555"
+    en-tête: 
+      position: 
+        nombre colonnes: nombre colonnes
+      couleur fond: "#D2D2D2"
+      paragraphe: 
+        alignement: center
+      alignement vertical: center
+      chemin donnees: 
+        - /rapport/document/intitules/articles/en-tete/c
+    articles: 
+      position: 
+        ligne début: 2
+        nombre lignes: nombre lignes-2
+        nombre colonnes: nombre colonnes-1
+      chemin donnees: 
+        - /rapport/commandes/commande/produit/@model
+        - /rapport/commandes/commande/produit/@nom
+        - /rapport/commandes/commande/produit/@reliquat		
+    cellules quantité: 
+      position: 
+        ligne début: 2
+        colonne début: nombre colonnes
+        nombre lignes: nombre lignes-1
+      paragraphe: 
+        alignement: right
+      chemin donnees: 
+        - /rapport/commandes/commande/produit/@quantity
+        - /rapport/commandes/commande/@nbTotalArticles
+    ligne total: 
+      position: 
+        ligne début: nombre lignes
+        nombre colonnes: nombre colonnes-1
+      bordure: 
+        taille: 0
+        couleur: "#FFFFFF"
+        exclure:
+          - haut
+    cellule total: 
+      position: 
+        ligne début: nombre lignes
+        colonne début: nombre colonnes
+      couleur fond: "#D2D2D2"
+      bordure: 
+        taille: 1
+        couleur: "#555555"
+      paragraphe: 
+        alignement: right

@@ -1,0 +1,19 @@
+"ReferenceExpedition";"NomDestinataire";"NumeroColis";"Adresse1";"Adresse2";"CodePostal";"Commune";"CodePays";
+99583                              LAURENT DARSY                      9V0203426996513 RUE WILLIAM SHAKESPEARE                                            49000    ANGERS                             FR 
+99586                              OLIVIER  CABANIS                   9V020342699725 RUE DU MOULIN                                                       31310    RIEUX - VOLVESTRE                  FR 
+99602                              DOMINIQUE COLIN                    9V0203426998925 RUE DES MARGUERITES                                                94240    L HAY LES ROSES                    FR 
+99601                              JEANINE PRENDIN                    9V02034269996TRESCOS                                                               47250    ARGENTON                           FR 
+99596                              AURELIE RENAULT                    9V020342700081 RUE DU PETIT TRAIN                                                  22150    HENON                              FR 
+99588                              JEAN LOUIS ISNARD                  9V020342700155, LOTISSEMENT DU PITAT                                               88540    BUSSANG                            FR 
+99590                              M. LE LEANNEC LOIC                 9V020342700221 RUE DU GENERAL ALAIN DE BOISSIEU                                    28110    LUCE                               FR 
+99592                              M. LELUT STEPHANE                  9V020342700393 RUE NOTRE DAME                                                      18310    GRACAY                             FR 
+99591                              MME CASTEL MARIE                   9V02034270046JOS?PHE - 35 ROUTE DE NANTES                                          44120    VERTOU                             FR 
+99585                              ERIC SANJULIAN                     9V020342700538 ALLEE DES MARAICHERS                                                77700    CHESSY                             FR 
+99599                              LUCIENNE MAGEE                     9V02034270060UBIFRANCE                          2 PLACE D'ARVIEUX                  13002    MARSEILLE                          FR 
+109831                             JACQUES STETTLER                   CY785906392FRRTE DE CARROUGE 10                                                    1509     VUCHERENS                          CH 
+132714                             BORER  ANJA                        CY785906401FRENETBACHSTRASSE 3                                                     3507     BIGLEN                             CH 
+97785                              GUILLAUME ROUCOU                   9V02034270077BIOMEDIQA                          99C RUE PARMENTIER                 59650    VILLENEUVE D'ASCQ                  FR 
+99589                              M. CHASSAGNEUX ROMAIN              9V0203426995825 BIS AVENUE DU CRUCHIN                                              42610    ST ROMAIN LE PUY                   FR 
+99581                              SAMANTHA PHILOXENE                 9V02034270084FOYER ARCADE 13 RUE DU VIEUX COLLEG                                   21000    DIJON                              FR 
+99584                              STEEVE DAGONNEAU                   9V0203426994126 PLACE DU MINAGE                                                    85400    LUCON                              FR 
+99600                              NATHALIE STIEGLER                  9V02034270091CENTRE EUROPEEN ÉTUDE DU DIABETE   BD RENE LERICHE                    67200    STRASBOURG                         FR 

@@ -1,0 +1,185 @@
+* {
+	margin:0 auto;
+	background-repeat: no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	font-size: 10pt;
+	font-weight: bolder;
+	text-align: center;
+	padding: 10px;
+	font-variant: small-caps;
+}
+
+#conteneur {
+	width:1000px;
+	height:500px;
+}
+
+#bandeauSuperieur {
+	height:150px;
+	position: relative;
+	background-image: url(../images/easylampsEu_bandeauSup.gif);
+}
+
+#panneauCentral {
+	height:435px;
+}
+
+#piedDePage {
+	background-image: url(../images/easylampsEu_panneauBas.png);
+}
+
+#panneauLateralGauche {
+	float: left;
+	width: 266px;
+}
+
+#contenuDroit {
+	float: left;
+	height:435px;
+	width:734px;
+}
+
+#panneauLatG_login {
+	width:266px;
+	height:190px;
+	background-image: url(../images/easylampsEu_panneauLatG_login.gif);
+}
+
+#panneauLatG_ouvrirCompte {
+	width:266px;
+	height:103px;
+	background-image: url(../images/easylampsEu_panneauLatG_ouvrirCompte.gif);
+	margin-top: 5px;
+}
+
+#panneauLatG_bas {
+	margin-top: 5px;
+}
+
+#contenuDroit_haut {
+	height:88px;
+	float:none;
+}
+
+#contenuDroit_rechercher {
+	width:734px;
+	height:210px;
+	background-image: url(../images/easylampsEu_contenuDroit_rechercher.png);
+}
+
+#contenuDroit_bas {
+}
+
+#panneauLatG_bulbes {
+	float: left;
+	width:133px;
+	height:133px;
+	background-image: url(../images/easylampsEu_panneauLatG_bulbes.gif);
+}
+#panneauLatG_lampesOI {
+	float: left;
+	width:133px;
+	height:133px;
+	background-image: url(../images/easylampsEu_panneauLatG_lampesOI.gif);
+}
+
+#contenuDroit_RechercheReference {
+	float: left;
+	height:136px;
+	width:367px;
+}
+
+#contenuDroit_FraisLivraison {
+	float: left;
+	height:136px;
+	width:367px;
+}
+
+#navigation {
+	list-style: none ;
+	padding: 0;
+	overflow: hidden ;		/* Création du contexte de formatage */
+	}
+
+#navigation li {
+	float: left ;
+	height:29px;
+}
+
+#navigation li.l1 {
+	width: 95px ;
+}
+
+#navigation li.l2 {
+	width: 107px ;
+}
+
+#navigation li.l3 {
+	width: 145px ;
+}
+
+#navigation li.l4 {
+	width: 170px ;
+}
+
+#navigation li.l5 {
+	width: 195px ;
+}
+
+
+#navigation li a {
+	display: block;
+	color: #fff;
+	padding: 4px 0;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10pt;
+	font-weight: bolder;
+	}
+
+#navigation li.l1 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL1.png) left top no-repeat ;
+}
+
+#navigation li.l2 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL2.png) left top no-repeat ;
+}
+
+#navigation li.l3 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL3.png) left top no-repeat ;
+}
+
+#navigation li.l4 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL4.png) left top no-repeat ;
+}
+
+#navigation li.l5 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL5.png) left top no-repeat ;
+}
+
+#navigation li a:hover, #nav li a:focus, #nav li a:active {
+	text-decoration: underline ;
+	}
+
+#navigation li.l1 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL1.png) right top no-repeat ;
+}
+
+#navigation li.l2 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL2.png) right top no-repeat ;
+}
+
+#navigation li.l3 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL3.png) right top no-repeat ;
+}
+
+#navigation li.l4 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL4.png) right top no-repeat ;
+}
+
+#navigation li.l5 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL5.png) right top no-repeat ;
+}

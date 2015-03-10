@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<OpenShipments xmlns="x-schema:OpenShipments.xdr">
+	<OpenShipment ShipmentOption="" ProcessStatus="Processed">
+		<Receiver>
+			<CompanyName>ALTERBURO LOGISTICS</CompanyName>
+			<ContactPerson>REMY DOUILLARD</ContactPerson>
+			<AddressLine1>RUE JAN PALACH</AddressLine1>
+			<AddressLine2>Zone de la LORIE</AddressLine2>
+			<AddressLine3></AddressLine3>
+			<City>ST HERBLAIN</City>
+			<CountryCode>FR</CountryCode>
+			<PostalCode>44800</PostalCode>
+			<Phone>0228071120</Phone>
+			<EmailAddress1>remdouillard@alterburo.fr</EmailAddress1>
+		</Receiver>
+		<Shipper>
+			<UpsAccountNumber>2A9663</UpsAccountNumber>
+		</Shipper>
+		<Shipment>
+			<ServiceLevel>ST</ServiceLevel>
+			<PackageType>CP</PackageType>
+			<NumberOfPackages>1</NumberOfPackages>
+			<ShipmentActualWeight>1</ShipmentActualWeight>
+			<DescriptionOfGoods>Projector lamp</DescriptionOfGoods>
+			<Reference1>154243</Reference1>
+			<Reference2></Reference2>
+			<BillingOption>PP</BillingOption>
+			<QuantumViewNotifyDetails>
+				<QuantumViewNotify>
+					<NotificationEMailAddress>remdouillard@alterburo.fr</NotificationEMailAddress>
+					<NotificationRequest>5</NotificationRequest>
+				</QuantumViewNotify>
+				<FailureNotificationEMailAddress>ups@linats.net</FailureNotificationEMailAddress>
+				<ShipperCompanyName></ShipperCompanyName>
+				<SubjectLineOptions>SubjectLineOptions</SubjectLineOptions>
+				<NotificationMessage>NotificationMessage</NotificationMessage>
+			</QuantumViewNotifyDetails>
+		</Shipment>
+		<ProcessMessage>
+			
+			<ShipmentRates>
+				<ShipmentCharges>
+					<Rate>
+						<Published>17,68</Published>
+						<Negotiated>6,72</Negotiated>
+					</Rate>
+				</ShipmentCharges>
+				<ShipperCharges>
+					<Rate>
+						<Published>17,68</Published>
+						<Negotiated>6,72</Negotiated>
+					</Rate>
+				</ShipperCharges>
+				<ReceiverCharges>
+					<Rate>
+						<Published>0,00</Published>
+						<Negotiated>0,00</Negotiated>
+					</Rate>
+				</ReceiverCharges>
+				<QVN>
+					<Rate>
+						<Published>0,00</Published>
+						<Negotiated>0,00</Negotiated>
+					</Rate>
+				</QVN>
+				<PackageRates>
+					<PackageRate>
+						<TrackingNumber>1Z2A96636855721897</TrackingNumber>
+						<PackageCharges>
+							<Rate>
+							<Published>0,00</Published>
+							<Negotiated>0,00</Negotiated>
+							</Rate>
+						</PackageCharges>
+						<Delivery_AreaSurcharge>
+							<Rate>
+							<Published>0,00</Published>
+							<Negotiated>0,00</Negotiated>
+							</Rate>
+						</Delivery_AreaSurcharge>
+					</PackageRate>
+				</PackageRates>
+			</ShipmentRates>
+			<TrackingNumbers>
+				<TrackingNumber>1Z2A96636855721897</TrackingNumber>
+			</TrackingNumbers>
+			<ImportID></ImportID>
+			<Reference1>154243</Reference1>
+			<Reference2></Reference2>
+		<ShipmentID></ShipmentID>
+		<PRONumber></PRONumber>
+		</ProcessMessage>
+	</OpenShipment>
+</OpenShipments>

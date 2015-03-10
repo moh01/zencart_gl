@@ -1,0 +1,982 @@
+/**
+ * Main CSS Stylesheet
+ *
+ * @package templateSystem
+ * @copyright Copyright 2003-2005 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: stylesheet.css 4376 2006-09-03 20:42:22Z drbyte $
+ */
+* {
+	margin:0 auto;
+	background-repeat: no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	margin: 0;
+	background-image:url(../images/gray_bckg.jpg); 
+        background-repeat: repeat-x;
+	}
+
+h2 {
+	font-size: 10pt;
+	font-weight: bolder;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	font-variant: small-caps;
+}
+
+input {
+	border-top-style: inset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+}
+
+div #contenuDroit_haut, #contenuDroit_rechercher, #contenuDroit_RechercheReference, #contenuDroit_FraisLivraison,  #panneauLatG_login, #panneauLatG_ouvrirCompte{
+	padding-left: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a.lienSimple {
+	font-weight: bold;
+	font-size: smaller;
+}
+
+a.lienFin {
+	font-size: x-small;
+}
+
+button.okRond {
+	border:none;
+	width: 26px;
+	height: 26px;
+	background-image: url(../images/easylampsEu_rondOK.png);
+	background-repeat: no-repeat;
+	padding-top:10px;
+	margin-left:8px;
+}
+
+#conteneur {
+	width:1000px;
+	height:500px;
+}
+
+#bandeauSuperieur {
+	height:150px;
+	position: relative;
+	background-image: url(../images/easylampsEu_bandeauSup.gif);
+}
+
+ul#drapeaux {
+	list-style: none ;
+	position: relative;
+	top:20px;
+	left:800px;
+}
+
+ul#drapeaux li{
+	display: inline;
+	margin: 0px;
+}
+
+ul#drapeaux li a{
+	float: left ;
+	width: 18px;
+	height: 37px;
+	margin-left: 10px;
+}
+
+ul#drapeaux li#anglais a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauAnglais.png);
+}
+ul#drapeaux li#francais a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauFrancais.png);
+}
+ul#drapeaux li#espagnol a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauEspagnol.png);
+}
+ul#drapeaux li#allemand a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauAllemand.png);
+}
+ul#drapeaux li#italien a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauItalien.png);
+}
+
+#panneauCentral {
+	margin:0;
+	height:435px;
+}
+
+#piedDePage {
+	background-image: url(../images/easylampsEu_panneauBas.png);
+	text-align:center;
+}
+
+#panneauLateralGauche {
+	float: left;
+	width: 266px;
+}
+
+#panneauLatG_login {
+	width:266px;
+	height:190px;
+	background-image: url(../images/easylampsEu_panneauLatG_login.gif);
+}
+
+#panneauLatG_login label {
+	padding-right: 50px;
+	font-size: smaller;	
+}
+
+#panneauLatG_login label#memoriserMotDePasse {
+	vertical-align:top;
+}
+
+#panneauLatG_login input {
+	margin-bottom: 4px;
+}
+
+#panneauLatG_login p {
+	margin-top: 5px;
+}
+
+#panneauLatG_login button.okRond {
+	background-color: #9BB2CF;
+}
+
+#panneauLatG_ouvrirCompte {
+	width:266px;
+	height:103px;
+	background-image: url(../images/easylampsEu_panneauLatG_ouvrirCompte.gif);
+	margin-top: 5px;
+}
+
+#panneauLatG_bas {
+	margin-top: 5px;
+}
+
+#panneauLatG_bas a{
+	position: relative;
+	background-color: #000000;
+	color: #FFFFFF;
+	left: 39px;
+	top: 115px;
+}
+
+#panneauLatG_bulbes {
+	float: left;
+	width:133px;
+	height:133px;
+	background-image: url(../images/easylampsEu_panneauLatG_bulbes.gif);
+}
+#panneauLatG_lampesOI {
+	float: left;
+	width:133px;
+	height:133px;
+	background-image: url(../images/easylampsEu_panneauLatG_lampesOI.gif);
+}
+
+
+#contenuDroit {
+	float: left;
+	height:435px;
+	width:734px;
+}
+
+#contenuDroit_haut {
+	height:88px;
+	float:none;
+	background-color: white;
+
+}
+
+#contenuDroit_haut h2 {
+	font-size: large;
+}
+
+#contenuDroit_haut h2 em{
+	color: #EAAA2E;
+	font-style: normal;	
+}
+
+#contenuDroit_rechercher {
+	width:734px;
+	height:210px;
+	background-image: url(../images/easylampsEu_contenuDroit_rechercher.png);
+}
+
+ul#rechecheModele {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+ul#rechecheModele li select {
+	margin-top: 6px;
+}
+
+ul#rechecheModele li a{
+	display: block;
+	padding-top: 6px;
+}
+
+ul#rechecheModele li{
+	margin-top: 10px;
+	height: 30px;
+}
+
+ul#rechecheModele li#rech_marque{
+	background-image:url(../images/easylampsEu_contenuDroit_rechercher_chiffre1.png);
+}
+ul#rechecheModele li#rech_modele{
+	background-image:url(../images/easylampsEu_contenuDroit_rechercher_chiffre2.png);
+}
+ul#rechecheModele li#rech_soumettre{
+	background-image:url(../images/easylampsEu_contenuDroit_rechercher_chiffre3.png);
+}
+
+#contenuDroit_RechercheReference, #contenuDroit_rechercher {
+	padding-left:75px;
+}
+
+ul#rechecheModele li a, ul#rechecheModele li select{
+	margin-left:45px;
+}
+
+ul#rechecheModele li select, #contenuDroit_RechercheReference input{
+	width:250px;
+}
+
+
+#contenuDroit_bas  {
+	height:137px;
+	float:none;
+	background-color: white;
+}
+
+
+
+#contenuDroit_rechercher h2, #contenuDroit_bas h2 {
+	color: #EAAA2E;
+}
+
+#contenuDroit_RechercheReference {
+	float: left;
+	height:136px;
+	width:300px;
+}
+
+#contenuDroit_RechercheReference button.okRond {
+	background-color: white;
+}
+
+#contenuDroit_FraisLivraison {
+	float: left;
+	height:136px;
+	background-position: 45px 35px;
+	background-image: url(../images/easylampsEu_contenuDroit_boiteLivraison.png);
+	padding-left:130px;
+	padding-top:35px;
+}
+
+#contenuDroit_FraisLivraison p em{
+	font-weight: bold;
+	font-style: normal;
+}
+
+#contenuDroit_RechercheReference a, #contenuDroit_FraisLivraison a {
+	color: #EAAA2E;
+	font-weight: bold;
+	font-size: larger;
+}
+
+#contenuDroit_RechercheReference p, #contenuDroit_FraisLivraison p {
+	font-size: smaller;
+	margin-top:10px;
+}
+
+a img {border: none; }
+
+a:link, #navEZPagesTOC ul li a {
+	text-decoration: none;
+	}
+ 
+a:visited {
+	text-decoration: none;
+	}
+
+
+h1 {
+	font-size: 1.5em;
+	}
+
+h2 {
+	font-size: 1.4em;
+	}
+
+h3 {
+	font-size: 1.3em;
+	}
+
+h4, h5, h6, LABEL, h4.optionName, LEGEND, ADDRESS, .sideBoxContent, .larger{
+	font-size: 1.1em;
+	}
+
+.biggerText {
+	font-size: 1.2em;
+	}
+
+
+
+
+
+
+CODE {
+	font-family: arial, verdana, helvetica, sans-serif;
+	font-size: 1em;
+	}
+
+FORM, SELECT, INPUT {
+	display: inline;
+	font-size: 1em;
+	margin: 0.1em;
+	}
+
+TEXTAREA {
+	float: left;
+	margin: auto;
+	display: block;
+	width: 95%;
+	}
+
+input:focus, select:focus, textarea:focus {
+	background: #F0F8FF;
+	}
+
+FIELDSET {
+	padding: 0.5em;
+	margin: 0.5em 0em;
+	border: 1px solid #cccccc;
+	}
+
+LEGEND {
+	font-weight: bold;
+	padding: 0.3em;
+	}
+
+LABEL, h4.optionName {
+	line-height: 1.5em;
+	padding: 0.2em;
+	}
+
+LABEL.checkboxLabel, LABEL.radioButtonLabel {
+	margin: 0.5em 0.3em;
+	}
+
+#logo, .centerBoxContents, .specialsListBoxContents, .categoryListBoxContents, .centerBoxContentsAlsoPurch, .attribImg {
+	float: left;
+	}
+
+LABEL.inputLabel {
+	width: 11em;
+	float: left;
+	}
+
+LABEL.inputLabelPayment {
+	width: 15em;
+	float: left;
+	}
+
+LABEL.selectLabel, LABEL.switchedLabel, LABEL.uploadsLabel  {
+	width: 12em;
+	float: left;
+	}
+
+P, ADDRESS {
+	padding: 0.5em;
+	}
+
+ADDRESS {
+	font-style: normal;
+	}
+
+.clearBoth {
+	clear: both;
+	}
+
+HR {
+	height: 1px;
+	margin-top: 0.5em;
+	border: none;
+	border-bottom: 1px solid #9a9a9a;
+	}
+
+/*warnings, errors, messages*/
+.messageStackWarning, .messageStackError, .messageStackSuccess, .messageStackCaution {
+	line-height: 1.8em;
+	padding: 0.2em;
+	border: 1px solid #000000;
+	}
+
+.messageStackWarning, .messageStackError {
+	background-color: #ff0000;
+	color: #ffffff;
+	}
+
+.messageStackSuccess {
+	background-color: #99FF99;
+	color: #000000;
+	}
+
+.messageStackCaution {
+	background-color: #FFFF66;
+	color: #000000;
+	}
+
+/*wrappers - page or section containers*/
+#mainWrapper {
+	background-color: #ffffff;
+	text-align: left;
+	width: 100%;
+	vertical-align: top;
+	}
+
+#headerWrapper, #contentMainWrapper, #logoWrapper, #cartBoxListWrapper, #ezPageBoxList, #cartBoxListWrapper ul, #ezPageBoxList ul, #mainWrapper, #popupAdditionalImage, #popupImage {
+	margin: 0em;
+	padding: 0em;
+	}
+
+#navColumnOneWrapper, #navColumnTwoWrapper, #mainWrapper {
+	margin: auto;
+	} 
+
+#tagline {
+	color:#000000;
+	font-size: 2em;
+	text-align : center;
+	vertical-align: middle;
+	}
+
+#sendSpendWrapper {
+	border: 1px solid #cacaca;
+	float: right;
+	margin: 0em 0em 1em 1em;
+	}
+
+.floatingBox, #accountLinksWrapper, #sendSpendWrapper, #checkoutShipto, #checkoutBillto, #navEZPagesTOCWrapper {
+	margin: 0;
+	width: 47%;
+	}
+
+.wrapperAttribsOptions {
+	margin: 0.3em 0em;
+	}
+
+/*navigation*/
+
+.navSplitPagesResult {}
+.navSplitPagesLinks {}
+.navNextPrevCounter {
+	margin: 0em;
+	font-size: 0.9em;
+	}
+.navNextPrevList {
+	display: inline;
+	white-space: nowrap;
+	margin: 0;
+	padding:  0.5em 0em;
+	list-style-type: none;
+	}
+
+#navMainWrapper, #navSuppWrapper, #navCatTabsWrapper {
+	margin: 0em;
+	background-color: #9a9a9a;
+	font-weight: bold;
+	color: #ffffff;
+	height: 1%;
+	width: 100%;
+	}
+
+#navMain ul, #navSupp ul, #navCatTabs ul  {
+	margin: 0;
+	padding:  0.5em 0em;
+	list-style-type: none;
+	text-align: center;
+	line-height: 1.5em;
+	}
+
+#navMain ul li, #navSupp ul li, #navCatTabs ul li {
+	display: inline;
+	}
+
+#navMain ul li a, #navSupp ul li a, #navCatTabs ul li a {
+	text-decoration: none;
+	padding: 0em 0.5em;
+	margin: 0;
+	color: #ffffff;
+	white-space: nowrap;
+	}
+
+#navEZPagesTOCWrapper {
+	font-weight: bold;
+	float: right;
+	height: 1%;
+	border: 1px solid #000000;
+	}
+
+#navEZPagesTOC ul {
+	margin: 0;
+	padding:  0.5em 0em;
+	list-style-type: none;
+	line-height: 1.5em;
+	}
+
+#navEZPagesTOC ul li {
+	white-space: nowrap;
+	}
+
+#navEZPagesTOC ul li a {
+	padding: 0em 0.5em;
+	margin: 0;
+	}
+
+#navMainSearch, #navCategoryIcon, .buttonRow, #indexProductListCatDescription {
+	margin: 0.5em;
+	}
+
+#navBreadCrumb {
+	background-color: #cc9900;
+	}
+
+#navEZPagesTop {
+	background-color: #ffff33;
+	}
+
+#navBreadCrumb, #navEZPagesTop {
+	font-size: 0.95em;
+	font-weight: bold;
+	margin: 0em;
+	padding: 0.5em;
+	}
+
+#navColumnOne {
+	background-color: #FFCC99;
+	}
+
+#navColumnTwo {
+	background-color: #00BFBF;
+	}
+
+/*The main content classes*/
+#contentColumnMain, #navColumnOne, #navColumnTwo, .centerBoxContents, .specialsListBoxContents, .categoryListBoxContents, .additionalImages, .centerBoxContentsSpecials, .centerBoxContentsAlsoPurch, .centerBoxContentsFeatured, .centerBoxContentsNew, .alert {
+	vertical-align: top;
+	}
+
+/*.content,*/ #productDescription, .shippingEstimatorWrapper {
+	/*font-size: 1.2em;*/
+	padding: 0.5em;
+	}
+
+.alert {
+	color: #FF0000;
+	margin-left: 0.5em;
+	}
+.advisory {}
+.important {
+	font-weight: bold;
+	}
+.notice {}
+.rating{}
+.gvBal {
+	float: right;
+	}
+.centerColumn, #bannerOne, #bannerTwo,  #bannerThree,  #bannerFour,  #bannerFive,  #bannerSix {
+	padding: 0.8em;
+	}
+
+.smallText, #siteinfoLegal, #siteinfoCredits, #siteinfoStatus, #siteinfoIP {
+	font-size: 0.9em;
+	}
+
+/*Shopping Cart Display*/
+#cartAdd {
+	float: right;
+	text-align: center;
+	margin: 1em;
+	border: 1px solid #000000;
+	padding: 1em;
+	}
+
+.tableHeading TH {
+	border-bottom: 1px solid #cccccc;
+	}
+
+.tableHeading, #cartSubTotal {
+	background-color: #e9e9e9;
+	 }
+
+#cartSubTotal {
+	border-top: 1px solid #cccccc;
+	font-weight: bold;
+	text-align: right;
+	line-height: 2.2em;
+	padding-right: 2.5em;
+	}
+
+.tableRow, .tableHeading, #cartSubTotal {
+	height: 2.2em;
+	}
+
+.cartProductDisplay, .cartUnitDisplay, .cartTotalDisplay, .cartRemoveItemDisplay, .cartQuantityUpdate, .cartQuantity, #cartInstructionsDisplay, .cartTotalsDisplay   {
+	padding: 0.5em 0em;
+	}
+
+.cartUnitDisplay, .cartTotalDisplay {
+	text-align: right;
+	padding-right: 0.2em;
+	}
+
+#scUpdateQuantity {
+	width: 2em;
+	}
+
+.cartQuantity {
+	width: 4.7em;
+	}
+
+.cartNewItem {
+	color: #33CC33;
+	position: relative;  /*do not remove-fixes stupid IEbug*/
+	}
+
+.cartOldItem {
+	color: #660099;
+	position: relative;   /*do not remove-fixes stupid IEbug*/
+	}
+
+.cartBoxTotal {
+	text-align: right;
+	font-weight: bold;
+	}
+
+.cartRemoveItemDisplay {
+	width: 3.5em;
+	}
+
+.cartAttribsList {
+	margin-left: 1em;
+	}
+
+#mediaManager {
+  width: 50%; 
+  margin: 0.2em;
+  padding: 0.5em;
+  }
+
+.normalprice, .productSpecialPriceSale {
+	text-decoration: line-through;
+	}
+
+.productSpecialPrice, .productSalePrice, .productSpecialPriceSale, .productPriceDiscount {
+	color: #ff0000;
+	}
+
+.orderHistList {
+	margin: 1em;
+	padding: 0.2em 0em;
+	} 
+
+#cartBoxListWrapper ul, #ezPageBoxList ul {
+	list-style-type: none;
+	}
+
+#cartBoxListWrapper li, #ezPageBoxList li, .cartBoxTotal {
+	margin: 0;
+	padding: 0.2em 0em;
+	} 
+
+#cartBoxEmpty, #cartBoxVoucherBalance {
+  font-weight: bold;
+  }
+
+.totalBox {
+	width: 5.5em;
+	text-align: right;
+	padding: 0.2em;
+	}
+
+.lineTitle, .amount {
+	text-align: right;
+	padding: 0.2em;
+	}
+
+.amount {
+	width: 5.5em;
+	}
+
+/*Image Display*/
+#productMainImage, #reviewsInfoDefaultProductImage, #productReviewsDefaultProductImage, #reviewWriteMainImage {
+	margin: 0em 1em 1em 0em ;
+	}
+
+.categoryIcon {}
+
+#cartImage {
+	margin: 0.5em 1em;
+	}
+
+/*Attributes*/
+.attribImg {
+	width: 20%;
+	margin: 0.3em 0em;
+}
+
+.attributesComments {}
+
+/*list box contents*/
+.centerBoxContents, .specialsListBoxContents, .categoryListBoxContents, .additionalImages, .centerBoxContentsSpecials, .centerBoxContentsAlsoPurch, .centerBoxContentsFeatured, .centerBoxContentsNew {
+	margin: 1em 0em;
+	}
+
+/*sideboxes*/
+.columnLeft {}
+
+h3.leftBoxHeading, h3.leftBoxHeading a {
+	font-size: 1em;
+	color: #ffffff;
+	}
+
+.leftBoxHeading, .centerBoxHeading {
+	margin: 0em;
+	background-color: #FF6699;
+	padding: 0.5em 0.2em;
+	}
+
+.leftBoxContainer {
+	border: 1px solid #ffffff;
+	margin-top: 1.5em;
+	}
+
+.sideBoxContent {
+	background-color: #ffffff;
+	padding: 0.4em;
+	}
+
+h3.rightBoxHeading, h3.rightBoxHeading a {
+	font-size: 1.1em;
+	color: #FFFF00;
+	}
+
+.rightBoxHeading {
+	margin: 0em;
+	background-color: #663366;
+	padding: 0.2em 0em;
+	}
+
+h3.leftBoxHeading a:hover {
+	color: #FFFF33;
+	text-decoration: none;
+	} 
+
+h3.rightBoxHeading a:hover {
+	color: #FF0000;
+	text-decoration: none;
+	}
+
+.rightBoxContent {
+	background-color: #ffffff;
+	margin-bottom: 1em;
+	}
+
+.centeredContent, TH, #cartEmptyText, #cartBoxGVButton, #cartBoxEmpty, #cartBoxVoucherBalance, #navCatTabsWrapper, #navEZPageNextPrev, #bannerOne, #bannerTwo,  #bannerThree,  #bannerFour,  #bannerFive,  #bannerSix, #siteinfoLegal, #siteinfoCredits, #siteinfoStatus, #siteinfoIP, .center, .cartRemoveItemDisplay, .cartQuantityUpdate, .cartQuantity, .cartTotalsDisplay, #cartBoxGVBalance, .leftBoxHeading, .centerBoxHeading,.rightBoxHeading, .productListing-data, .accountQuantityDisplay, .ratingRow, LABEL#textAreaReviews, #productMainImage, #reviewsInfoDefaultProductImage, #productReviewsDefaultProductImage, #reviewWriteMainImage, .centerBoxContents, .specialsListBoxContents, .categoryListBoxContents, .additionalImages, .centerBoxContentsSpecials, .centerBoxContentsAlsoPurch, .centerBoxContentsFeatured, .centerBoxContentsNew, .gvBal, .attribImg {
+	text-align: center;
+	}
+
+#bestsellers .wrapper {
+	margin: 0em 0em 0em 1.5em;
+	}
+
+#bestsellers ol {
+	padding: 0;
+	margin-left: 1.1em;
+	}
+
+#bestsellers li {
+	padding: 0;
+	margin: 0.3em 0em 0.3em 0em;
+	}
+
+#bannerboxHeading {
+	background-color: #0000CC;
+}
+
+#upProductsHeading {
+	text-align: left;
+	}
+
+#upDateHeading {
+	text-align: right;
+	}
+
+/*misc*/
+.back {
+	float: left;
+	}
+
+.forward {
+	float: right;
+	}
+
+.bold {
+	font-weight: bold;
+	}
+
+.rowOdd {
+	background-color: #E8E8E8;
+	height: 1.5em;
+	vertical-align: top;
+	}
+
+.rowEven {
+	background-color: #F0F0F0;
+	height: 1.5em;
+	vertical-align: top;
+	}
+
+CAPTION {
+	/*display: none;*/
+	}
+
+#myAccountGen li, #myAccountNotify li {
+	margin: 0;
+	} 
+
+.accountTotalDisplay, .accountTaxDisplay {
+	width: 20%;
+	text-align: right;
+	/*vertical-align: top*/
+	}
+
+.accountQuantityDisplay {
+	width: 10%;
+	vertical-align: top
+	}
+
+TR.tableHeading {
+	background-color: #cacaca;
+	height: 2em;
+	}
+
+#siteMapList {
+	width: 90%;
+	float: right;
+	}
+
+.ratingRow {
+	margin: 1em 0em 1.5em 0em;
+	}
+
+LABEL#textAreaReviews {
+	font-weight: normal;
+	margin: 1em 0em;
+	}
+
+#popupShippingEstimator, #popupSearchHelp, #popupAdditionalImage, #popupImage, #popupCVVHelp, #popupCouponHelp, #popupAtrribsQuantityPricesHelp, #infoShoppingCart {
+	background-color: #ffffff;
+	}
+
+
+#navigation {
+	list-style: none ;
+	padding: 0;
+	overflow: hidden ;		/* Création du contexte de formatage */
+	}
+
+#navigation li {
+	float: left ;
+	height:29px;
+}
+
+#navigation li.l1 {
+	width: 95px ;
+}
+
+#navigation li.l2 {
+	width: 107px ;
+}
+
+#navigation li.l3 {
+	width: 145px ;
+}
+
+#navigation li.l4 {
+	width: 170px ;
+}
+
+#navigation li.l5 {
+	width: 195px ;
+}
+
+
+#navigation li a {
+	display: block;
+	color: #fff;
+	padding: 4px 0;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10pt;
+	font-weight: bolder;
+	}
+
+#navigation li.l1 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL1.png) left top no-repeat ;
+}
+
+#navigation li.l2 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL2.png) left top no-repeat ;
+}
+
+#navigation li.l3 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL3.png) left top no-repeat ;
+}
+
+#navigation li.l4 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL4.png) left top no-repeat ;
+}
+
+#navigation li.l5 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL5.png) left top no-repeat ;
+}
+
+#navigation li a:hover, #nav li a:focus, #nav li a:active {
+/*	text-decoration: underline ;*/
+}
+
+#navigation li.l1 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL1.png) right top no-repeat ;
+}
+
+#navigation li.l2 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL2.png) right top no-repeat ;
+}
+
+#navigation li.l3 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL3.png) right top no-repeat ;
+}
+
+#navigation li.l4 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL4.png) right top no-repeat ;
+}
+
+#navigation li.l5 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL5.png) right top no-repeat ;
+}

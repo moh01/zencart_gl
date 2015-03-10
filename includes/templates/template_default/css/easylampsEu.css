@@ -1,0 +1,296 @@
+* {
+	margin:0 auto;
+	background-repeat: no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	margin: 0;
+	background-image:url(../images/gray_bckg.jpg); 
+        background-repeat: repeat-x;
+	}
+
+h2 {
+	font-size: 10pt;
+	font-weight: bolder;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	font-variant: small-caps;
+}
+
+input {
+	border-top-style: inset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+}
+
+div #contenuDroit_haut, #contenuDroit_rechercher, #contenuDroit_RechercheReference, #contenuDroit_FraisLivraison,  #panneauLatG_login, #panneauLatG_ouvrirCompte{
+	padding-left: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a.lienSimple {
+	font-weight: bold;
+	font-size: smaller;
+}
+
+a.lienFin {
+	font-size: x-small;
+}
+
+button.okRond {
+	border:none;
+	width: 26px;
+	height: 26px;
+	background-image: url(../images/easylampsEu_rondOK.png);
+	background-repeat: no-repeat;
+	padding-top:10px;
+	margin-left:8px;
+}
+
+#conteneur {
+	width:1000px;
+	height:500px;
+}
+
+#bandeauSuperieur {
+	height:150px;
+	position: relative;
+	background-image: url(../images/easylampsEu_bandeauSup.gif);
+}
+
+ul#drapeaux {
+	list-style: none ;
+	position: relative;
+	top:20px;
+	left:800px;
+}
+
+ul#drapeaux li{
+	display: inline;
+	margin: 0px;
+}
+
+ul#drapeaux li a{
+	float: left ;
+	width: 18px;
+	height: 37px;
+	margin-left: 10px;
+}
+
+ul#drapeaux li#anglais a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauAnglais.png);
+}
+ul#drapeaux li#francais a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauFrancais.png);
+}
+ul#drapeaux li#espagnol a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauEspagnol.png);
+}
+ul#drapeaux li#allemand a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauAllemand.png);
+}
+ul#drapeaux li#italien a{
+	background-image:url(../images/easylampsEu_bandeauSup_drapeauItalien.png);
+}
+
+#panneauCentral {
+	margin:0;
+	height:435px;
+}
+
+#piedDePage {
+	background-image: url(../images/easylampsEu_panneauBas.png);
+	text-align:center;
+}
+
+#panneauLateralGauche {
+	float: left;
+	width: 266px;
+}
+
+#panneauLatG_login {
+	width:266px;
+	height:190px;
+	background-image: url(../images/easylampsEu_panneauLatG_login.gif);
+}
+
+#panneauLatG_login label {
+	padding-right: 50px;
+	font-size: smaller;	
+}
+
+#panneauLatG_login label#memoriserMotDePasse {
+	vertical-align:top;
+}
+
+#panneauLatG_login input {
+	margin-bottom: 4px;
+}
+
+#panneauLatG_login p {
+	margin-top: 5px;
+}
+
+#panneauLatG_login button.okRond {
+	background-color: #9BB2CF;
+}
+
+#panneauLatG_ouvrirCompte {
+	width:266px;
+	height:103px;
+	background-image: url(../images/easylampsEu_panneauLatG_ouvrirCompte.gif);
+	margin-top: 5px;
+}
+
+#panneauLatG_bas {
+	margin-top: 5px;
+}
+
+#panneauLatG_bas a{
+	position: relative;
+	background-color: #000000;
+	color: #FFFFFF;
+	left: 39px;
+	top: 115px;
+}
+
+#panneauLatG_bulbes {
+	float: left;
+	width:133px;
+	height:133px;
+	background-image: url(../images/easylampsEu_panneauLatG_bulbes.gif);
+}
+#panneauLatG_lampesOI {
+	float: left;
+	width:133px;
+	height:133px;
+	background-image: url(../images/easylampsEu_panneauLatG_lampesOI.gif);
+}
+
+
+#contenuDroit {
+	float: left;
+	height:435px;
+	width:734px;
+}
+
+#contenuDroit_haut {
+	height:88px;
+	float:none;
+	background-color: white;
+
+}
+
+#contenuDroit_haut h2 {
+	font-size: large;
+}
+
+#contenuDroit_haut h2 em{
+	color: #EAAA2E;
+	font-style: normal;	
+}
+
+#contenuDroit_rechercher {
+	width:734px;
+	height:210px;
+	background-image: url(../images/easylampsEu_contenuDroit_rechercher.png);
+}
+
+ul#rechecheModele {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+ul#rechecheModele li select {
+	margin-top: 6px;
+}
+
+ul#rechecheModele li a{
+	display: block;
+	padding-top: 6px;
+}
+
+ul#rechecheModele li{
+	margin-top: 10px;
+	height: 30px;
+}
+
+ul#rechecheModele li#rech_marque{
+	background-image:url(../images/easylampsEu_contenuDroit_rechercher_chiffre1.png);
+}
+ul#rechecheModele li#rech_modele{
+	background-image:url(../images/easylampsEu_contenuDroit_rechercher_chiffre2.png);
+}
+ul#rechecheModele li#rech_soumettre{
+	background-image:url(../images/easylampsEu_contenuDroit_rechercher_chiffre3.png);
+}
+
+#contenuDroit_RechercheReference, #contenuDroit_rechercher {
+	padding-left:75px;
+}
+
+ul#rechecheModele li a, ul#rechecheModele li select{
+	margin-left:45px;
+}
+
+ul#rechecheModele li select, #contenuDroit_RechercheReference input{
+	width:250px;
+}
+
+
+#contenuDroit_bas  {
+	height:137px;
+	float:none;
+	background-color: white;
+}
+
+
+
+#contenuDroit_rechercher h2, #contenuDroit_bas h2 {
+	color: #EAAA2E;
+}
+
+#contenuDroit_RechercheReference {
+	float: left;
+	height:136px;
+	width:300px;
+}
+
+#contenuDroit_RechercheReference button.okRond {
+	background-color: white;
+}
+
+#contenuDroit_FraisLivraison {
+	float: left;
+	height:136px;
+	background-position: 45px 35px;
+	background-image: url(../images/easylampsEu_contenuDroit_boiteLivraison.png);
+	padding-left:130px;
+	padding-top:35px;
+}
+
+#contenuDroit_FraisLivraison p em{
+	font-weight: bold;
+	font-style: normal;
+}
+
+#contenuDroit_RechercheReference a, #contenuDroit_FraisLivraison a {
+	color: #EAAA2E;
+	font-weight: bold;
+	font-size: larger;
+}
+
+#contenuDroit_RechercheReference p, #contenuDroit_FraisLivraison p {
+	font-size: smaller;
+	margin-top:10px;
+}

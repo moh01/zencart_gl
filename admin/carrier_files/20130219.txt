@@ -1,0 +1,51 @@
+"ReferenceExpedition";"NomDestinataire";"NumeroColis";"Adresse1";"Adresse2";"CodePostal";"Commune";"CodePays";
+99578                              MAUD JAILLIARD                     9V0203426985924, ROUTE DE BOURGOGNE                                                52400    BOURBONNE LES BAINS                FR 
+109796                             YOLAINE BARET                      7A9495964436130 RUE EVARISTE DE PARNY                                              97421    LA RIVIERE ST LOUIS                FR 
+99535                              LUDOVIC FABRE                      9V02034269705146 BIS RUE PIERRE VALDO           RESTAURANT TERRASSES DE VALDO      69005    LYON                               FR 
+99574                              LEILA GIRERD                       9V020342698669 ALLEE DES NEFLIERS                                                  38090    VILLEFONTAINE                      FR 
+99550                              MLLE LECOT AMANDINE                9V0203426987348 AVENUE DU GENERAL DE GAULLE                                        91550    PARAY VIEILLE POSTE                FR 
+99565                              ANNICK CHENUT                      9V020342695385 RUE ROBERT LAVERGNE              APPT 120                           92600    ASNIERES SUR SEINE                 FR 
+99564                              MICHAEL LOURDIN                    9V02034269545503 RUE DU MOULIN                                                     38560    JARRIE                             FR 
+99562                              JULIE MANGEAT                      9V02034269552KERVILON                                                              29370    ELLIANT                            FR 
+99566                              STEPHANE SARAGAGLIA                9V02034269569SNOWSAT                            2 CHEMIN DES PRES                  38240    MEYLAN                             FR 
+99567                              FREDERIC PATHIER                   9V02034269576KPDP CONSULTING                    2 AVENUE DE MESSINE                75008    PARIS                              FR 
+99543                              CHRISTIAN SIMON                    9V0203426958371 AVENUE ST MARC                                                     11200    ORNAISONS                          FR 
+99540                              AXEL PINCEMIN                      9V020342695909 RUE JEAN MERMOZ                  2.01                               08300    RETHEL                             FR 
+99539                              FLORENT JAUBERT                    9V02034269606940 CHEMIN DE FUSTIE               BIRAC                              82000    MONTAUBAN                          FR 
+99547                              JOCELYNE EBEYAN                    9V020342696137 RUE DES VIGNES                                                      77124    VILLENOY                           FR 
+99546                              CHRISTELE TRAN                     9V02034269620LES PRADEAUX                                                          43320    SANSSAC L'EGLISE                   FR 
+99557                              M. HEAFALA RONY                    9V020342696372 TER RUE DE BETHMANN - R?SIDENCE                                     33000    BORDEAUX                           FR 
+99558                              M. MOREAU SEBASTIEN                9V02034269644ENTAGOS - 3 RUE DU DU PONT DES HAL                                    94656    RUNGIS CEDEX                       FR 
+99530                              ALAIN VITRAC                       9V0203426965141, RUE ALEXANDRE DUMAS                                               45100    ORLEANS                            FR 
+99542                              SEVERINE VILOTEAU                  9V020342696686 RUE DU CLOS FLEURI                                                  72430    FERCE SUR SARTHE                   FR 
+99556                              M. DAVY ANDRE                      9V02034269675LA GUERCHE - LA GUERCHE                                               35120    BROUALAN                           FR 
+99552                              M. CLAUDE THIERRY                  9V0203426968244 RUE VOLTAIRE                                                       54250    CHAMPIGNEULLES                     FR 
+99549                              MICHEL DUPRE                       9V020342696999 RUE DU CLOS NOTRE DAME DE BON SEC                                   60300    SENLIS                             FR 
+99548                              BENOIT SARIGNAC                    9V0203426971215 RUE DU PETIT CHOISY                                                44400    REZE                               FR 
+99545                              FRANCOIS LE MAT                    9V0203426972923 LA GREE                                                            44160    PONTCHATEAU                        FR 
+99551                              M. LACHAVE NICOLAS                 9V0203426973646 AVENUE DE LEMPDES                                                  63800    COURNON D AUVERGNE                 FR 
+99531                              JEAN CLAUDE GONNET                 9V02034269743257 CHEMIN DU POMMERIN                                                73420    VIVIERS DU LAC                     FR 
+99554                              M. SWISTEK LAURENT                 9V02034269750INDESIT - INDESIT COMPANY FRANCE SA                                   77435    CROISSY BEAUBOURG                  FR 
+99572                              NADINE COURTOIS                    9V020342697673 RUE JEAN ROUSSEAU FLASSY 58420   NEUILLY                            58420    NEUILLY                            FR 
+99555                              M. LAMOUREUX FREDERIC              9V020342697741 RUE DE LA CROIX SAINT MARC                                          77710    CHEVRY EN SEREINE                  FR 
+99576                              NICOLAS ESCRIBANO                  9V02034269781GRANIER DIFFUSION                  ROUTE D'ALBI                       81230    LACAUNE                            FR 
+99534                              ANITA TATTEVIN                     9V02034269798385 ROUTE DE KERALMEN                                                 44420    MESQUER                            FR 
+99532                              AGNES LECEE                        9V02034269804352 RUE PIERRE MENDES FRANCE                                          45400    SEMOY                              FR 
+99553                              M. VERGES VERONIQUE                9V020342698112 RUE D OCCITANIE                                                     34690    FABREGUES                          FR 
+99536                              EMMANUEL GAYA                      7A94959644347BP 8132                                                               98807    NOUMEA                             FR 
+109370                             OLIVIER DAIGNAN                    9V0203426982847 RUE DE METZ                     BAL 5                              31000    TOULOUSE                           FR 
+99537                              THOMAS DUBOIS                      7A949596443545 RUE BELINDA                                                         97434    SAINT GILLES LES BAINS             FR 
+99575                              FLORE BELMADI                      9V02034269835126 RUE JULIO GONZALES                                                62100    CALAIS                             FR 
+99533                              MARIE-BLANCHE CORDOU               9V0203426984215 CHEMIN DE FONT DE GUIRAUD                                          13600    CEYRESTE                           FR 
+99563                              KARINE VICENTE                     9V02034269880CONCIERGERIE CHAMPOLLION           537 RUE DU PRE AUX CLERCS          34090    MONTPELLIER                        FR 
+99538                              THIERRY RESSOT                     9V02034269897MARQUE TAPAGE                      627 CHEMIN DE LARROUDE             40700    LABASTIDE CHALOSSE                 FR 
+99568                              LEVENT SENER                       9V0203426990361 RUE DE VILLEMONTAIS                                                42300    ROANNE                             FR 
+99514                              ALINE TASSART                      9V020342699107 BAT THIERACHE SOLEIL LEVANT      RESIDENCE SOLEIL LEVANT            80500    MONTDIDIER                         FR 
+160319                             HERSART DE LA VILLEMARQUE THIERR   7A9495964437866, LOT LES BELLES VUES            CONVENANCE                         97122    BAIE MAHAULT  GUADELOUPE           FR 
+99580                              COLETTE LEVEAU                     9V02034269521BATIMENT PERCHE A1                 CROIX ST JACQUES                   91410    DOURDAN                            FR 
+99571                              RACHEL WENANG                      9V020342695148 RUE DU 19 MARS 1962                                                 38120    SAINT EGREVE                       FR 
+99570                              MADDYSON BORKA                     9V02034269507RESIDENCE BEAU SITE                BATIMENT ANEMONE ESCALIER 4        77400    LAGNY SUR MARNE                    FR 
+99573                              THOMAS MORO                        9V020342694912 ALLEE MARGOT B7                                                     33320    EYSINES                            FR 
+99577                              JEAN PIERRE DOUSSINEAU             9V0203426948414, RUE DU SEGLARES                LOTISSEMENT LE CASTILLON           31510    LABROQUERE                         FR 
+99579                              LAURETTE WADOUX                    9V0203426947739 RUE SEMLER COLLERY                                                 59630    BOURBOURG                          FR 
+99476                              PATRICK SEMPORE                    9V0203426993440, RUE DES REMPARTS D'AINAY                                          69002    LYON 02                            FR 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rapport>
+<societe nom="EasyLamps">
+<adresse>
+<rue>33 rue de la révolution</rue>
+<ville>93100 Montreuil</ville>
+</adresse>
+<infos>
+<telephone>Tél	: 01.71.86.46.50</telephone>
+<fax>Fax	: 01 71 86 46 51</fax>
+<capital>Capital	: 4000 Euros</capital>
+<RCS>R.C.S.	: 489 702 514</RCS>
+<siret>Siret.	: 489 702 514 00022</siret>
+<cee>N/ld CEE	: FR 68 489 702 514</cee>
+</infos>
+</societe>
+<document date="07/11/2008" numero="21200" numero_facture="" numero_facture2="INVOICE:" date_facture="">
+<reference>Référence : </reference>
+<intitules>
+<articles>
+<en-tete>
+<c>Article</c>
+<c>Désignation</c>
+<c>Reliquat</c>
+<c>Livré</c>
+</en-tete>
+<en-tete2>
+<c>Article</c>
+<c>Désignation</c>
+<c>Prix EUR HT</c>
+</en-tete2>
+</articles>
+<rappelsHautDePage>Bon de livraison	Date		Client</rappelsHautDePage>
+<rappelsHautDePage2>Facture        	Date</rappelsHautDePage2>
+</intitules>
+</document>
+<client numero="1645">
+<livraison>
+<nom>Monsieur Bourbier</nom>
+<adresse>
+<rue>1 Place de l\'Eglise</rue>
+<ville>Lentilly</ville>
+<codepostal>69210</codepostal><pays>France</pays><rue2>1 Place de l\'Eglise</rue2><codepostal2>69210</codepostal2><ville2>Lentilly</ville2><pays2>France</pays2></adresse>
+<entreprise>Societe VIVAL</entreprise><nom2>Monsieur Bourbier</nom2><ref></ref></livraison>
+</client>
+<commandes>
+<commande numero="620167" nbTotalArticles="2" total_price="Total EUR 250"><produit nom="Lampe Genius pour HITACHI CP-X1." quantite_nom="1 x Lampe Genius pour HITACHI CP-X1." model="MCEL-DT00781" quantity="1" final_price="125" reliquat="0"/><produit nom="Lampe Genius pour HITACHI CP-X300." quantite_nom="1 x Lampe Genius pour HITACHI CP-X300." model="MCEL-DT00841" quantity="1" final_price="125" reliquat="0"/></commande></commandes>
+</rapport>

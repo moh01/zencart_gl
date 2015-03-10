@@ -1,0 +1,34 @@
+<?php
+
+/*  PDF Order Center 1.0 for Zen Cart v1.2.6d  and v1.2.7d
+ *  By Grayson Morris, 2006
+ *  Printing sections based on Batch Print Center for osCommerce by Shaun Flanagan
+ *
+ * Released under the Gnu General Public License (see GPL.txt)
+ *
+ * Christmas-Card.php
+ *
+ */
+
+if ($pageloop == "0") {  // initialize pdf settings
+
+  $pdf = new Cezpdf(A4,portrait); // change for your desired paper / orientation
+
+  $pdf->selectFont(DIR_PDFOC_FONTS . 'Helvetica.afm');
+  $pdf->setFontFamily(DIR_PDFOC_FONTS . 'Helvetica.afm');
+
+} else {   // print a card
+
+  // image (x offset from left, y offset from bottom, width, height)
+  $pdf->addJpegFromFile(DIR_PDFOC_TEMPLATES . 'christmascard.jpg',0,0,590,820);
+
+  $pdf->addText(330,330,PDFOC_GENERAL_FONT_SIZE,sprintf(PDFOC_EMAIL_SALUTATION,$customer_name));
+  $pdf->addText(350,290,PDFOC_GENERAL_FONT_SIZE,'Thanks for your continued support!');
+
+  // To help you see how elements line up, uncomment the line below to print out a
+  // grid over the invoice.
+  //require(DIR_PDFOC_TEMPLATES . 'grid.php');
+
+}
+
+?>

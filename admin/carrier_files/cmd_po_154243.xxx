@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenShipments xmlns="x-schema:OpenShipments.xdr">	  
+<OpenShipment ShipmentOption="" ProcessStatus="">
+<Receiver>
+	<CompanyName>ALTERBURO LOGISTICS</CompanyName>
+	<ContactPerson>REMY DOUILLARD</ContactPerson>
+	<AddressLine1>RUE JAN PALACH</AddressLine1>
+	<AddressLine2>Zone de la LORIE</AddressLine2>
+	<AddressLine3></AddressLine3>
+	<City>ST HERBLAIN</City>
+	<CountryCode>FR</CountryCode>
+	<PostalCode>44800</PostalCode>
+	<Phone>0228071120</Phone>
+	<EmailAddress1>remdouillard@alterburo.fr</EmailAddress1>
+</Receiver>
+<Shipper>
+	<UpsAccountNumber>2A9663</UpsAccountNumber>
+</Shipper>
+<Shipment>
+	<ServiceLevel>ST</ServiceLevel>
+	<PackageType>CP</PackageType>
+	<NumberOfPackages>1</NumberOfPackages>
+	<ShipmentActualWeight>1</ShipmentActualWeight>
+	<DescriptionOfGoods>Projector lamp</DescriptionOfGoods>
+	<Reference1>154243</Reference1>
+	<Reference2></Reference2>
+	<BillingOption>PP</BillingOption>
+	<QuantumViewNotifyDetails>
+		<QuantumViewNotify>
+			<NotificationEMailAddress>remdouillard@alterburo.fr</NotificationEMailAddress>
+			<NotificationRequest>5</NotificationRequest>
+		</QuantumViewNotify>
+		<FailureNotificationEMailAddress>ups@linats.net</FailureNotificationEMailAddress>
+		<ShipperCompanyName></ShipperCompanyName>
+		<SubjectLineOptions>SubjectLineOptions</SubjectLineOptions>
+		<NotificationMessage>NotificationMessage</NotificationMessage>
+	</QuantumViewNotifyDetails>
+	
+</Shipment>
+</OpenShipment>
+</OpenShipments>

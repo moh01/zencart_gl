@@ -1,0 +1,15 @@
+<SCRIPT LANGUAGE="JavaScript">
+
+function makefile(){
+	var fso;var thefile;
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	thefile=fso.CreateTextFile("c:\\test.txt",true);
+	fso.close();
+}
+  </SCRIPT>
+
+</head>
+
+<body onload="makefile()">
+<p>To sign up for the Excel workshop please fill out the form below:
+</p>

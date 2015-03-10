@@ -1,0 +1,90 @@
+<?php
+
+/*  PDF Order Center 1.0 for Zen Cart v1.2.6d  and v1.2.7d
+ *  By Grayson Morris, 2006
+ *  Printing sections based on Batch Print Center for osCommerce by Shaun Flanagan
+ *
+ * Released under the Gnu General Public License (see GPL.txt)
+ *
+ *  Letterhead.php
+ *
+ */
+
+if ($pageloop == "0") {   // initialize pdf settings
+
+  $pdf = new Cezpdf(A4,portrait); // change for your desired paper / orientation
+
+  $pdf->selectFont(DIR_PDFOC_FONTS . 'Helvetica.afm');
+  $pdf->setFontFamily(DIR_PDFOC_FONTS . 'Helvetica.afm');
+
+  // Note: units are 72 * inches
+
+  define('PDFOC_LEFT_MARGIN','30');
+
+  // The small indents in the Sold to: & Ship to: text blocks
+  define('PDFOC_TEXT_BLOCK_INDENT', '5');
+  define('PDFOC_SHIP_TO_COLUMN_START','300');
+
+  // This changes the 'Total - Subtotal - Tax - Shipping' text block
+  // position. For example, if you increase the font size, you'll need to
+  // tweak this value in order to prevent the text from clashing together.
+  define('PDFOC_PRODUCT_TOTAL_TITLE_COLUMN_START','400');
+  define('PDFOC_RIGHT_MARGIN','30');
+
+  define('PDFOC_LINE_LENGTH', '552');
+
+  // If you have attributes for certain products, you can have the text wrap
+  // or force it onto on one line. Set to true for wrap, false for single line.
+  define('PDFOC_PRODUCT_ATTRIBUTES_TEXT_WRAP', false);
+
+  // Vertical spacing between sections
+  define('PDFOC_SECTION_DIVIDER', '15');
+
+  // Product table settings
+  define('PDFOC_TABLE_HEADER_FONT_SIZE', '9');
+  define('PDFOC_TABLE_HEADER_BKGD_COLOR', PDFOC_DARK_GREY);
+  define('PDFOC_PRODUCT_TABLE_HEADER_WIDTH', '530');
+
+  // Simulate cell padding in HTML tables
+  define('PDFOC_PRODUCT_TABLE_BOTTOM_MARGIN', '2');
+  define('PDFOC_PRODUCT_TABLE_LEFT_MARGIN', '2');
+
+  // Height of the product listing rectangles
+  define('PDFOC_PRODUCT_TABLE_ROW_HEIGHT', '11');
+
+  // The column sizes are where the product listing columns start on the
+  // PDF page. If you increase TABLE HEADER FONT SIZE, you'll
+  // need to tweak these values to prevent text from clashing together.
+  define('PDFOC_PRODUCTS_COLUMN_SIZE', '165');
+  define('PDFOC_PRODUCT_LISTING_BKGD_COLOR',PDFOC_GREY);
+  define('PDFOC_MODEL_COLUMN_SIZE', '37');
+  define('PDFOC_PRICING_COLUMN_SIZES', '67');
+
+
+} else {  // print out an invoice
+
+
+  $currencies = new currencies();
+
+  // add watermark (x offset from left, y offset from bottom, width, height)
+  $pdf->addJpegFromFile(DIR_PDFOC_TEMPLATES . 'watermark.jpg',30,110,550,550);
+
+  // company name and details pulled from the my store address and phone number
+  // in admin configuration mystore
+  $y = $pdf->ezText(STORE_NAME_ADDRESS,PDFOC_COMPANY_HEADER_FONT_SIZE);
+  $y -= 10;
+
+  // logo image (x offset from left, y offset from bottom, width, height)
+  $pdf->addJpegFromFile(DIR_PDFOC_TEMPLATES . 'invoicelogo.jpg',365,730,85,85);
+
+  // line between header and rest of page
+  $pdf->setLineStyle(1);
+  $pdf->line(PDFOC_LEFT_MARGIN,$y,PDFOC_LINE_LENGTH,$y);
+  $pdf->ezSetY($y);
+  $dup_y = $y;
+
+
+  $pos -= PDFOC_SECTION_DIVIDER;
+
+}
+?>

@@ -1,0 +1,120 @@
+merchant_id : 038862749811111
+merchant_country : fr
+amount : 100
+transaction_id : 205526
+transmission_date: 20070118195526
+payment_means: VISA
+payment_time : 205604
+payment_date : 20070118
+response_code : 34
+payment_certificate : 
+authorisation_id : 
+currency_code : 978
+card_number : 1112.34
+cvv_flag: 1
+cvv_response_code: 4E
+bank_response_code: 34
+complementary_code: 
+return_context: 
+caddie : 
+receipt_complement: 
+merchant_language: fr
+language: fr
+customer_id: 
+order_id: 
+customer_email: 
+customer_ip_address: 
+capture_day: 0
+capture_mode: AUTHOR_CAPTURE
+data: 
+-------------------------------------------
+merchant_id : 038862749811111
+merchant_country : fr
+amount : 100
+transaction_id : 205653
+transmission_date: 20070118195653
+payment_means: VISA
+payment_time : 210038
+payment_date : 20070118
+response_code : 00
+payment_certificate : 1169150438
+authorisation_id : 150438
+currency_code : 978
+card_number : 4974.00
+cvv_flag: 1
+cvv_response_code: 4D
+bank_response_code: 00
+complementary_code: 
+return_context: 
+caddie : 
+receipt_complement: 
+merchant_language: fr
+language: fr
+customer_id: 9205653
+order_id: 
+customer_email: 
+customer_ip_address: 
+capture_day: 0
+capture_mode: AUTHOR_CAPTURE
+data: 
+-------------------------------------------
+merchant_id : 038862749811111
+merchant_country : fr
+amount : 100
+transaction_id : 215807
+transmission_date: 20070118205807
+payment_means: VISA
+payment_time : 220557
+payment_date : 20070118
+response_code : 00
+payment_certificate : 1169154357
+authorisation_id : 154357
+currency_code : 978
+card_number : 4974.00
+cvv_flag: 1
+cvv_response_code: 4D
+bank_response_code: 00
+complementary_code: 
+return_context: 
+caddie : 
+receipt_complement: 
+merchant_language: fr
+language: fr
+customer_id: 9215807
+order_id: 
+customer_email: 
+customer_ip_address: 
+capture_day: 0
+capture_mode: AUTHOR_CAPTURE
+data: 
+-------------------------------------------
+merchant_id : 038862749811111
+merchant_country : fr
+amount : 100
+transaction_id : 215651
+transmission_date: 20070118205651
+payment_means: VISA
+payment_time : 220559
+payment_date : 20070118
+response_code : 00
+payment_certificate : 1169154359
+authorisation_id : 154359
+currency_code : 978
+card_number : 4974.00
+cvv_flag: 1
+cvv_response_code: 4D
+bank_response_code: 00
+complementary_code: 
+return_context: 
+caddie : 
+receipt_complement: 
+merchant_language: fr
+language: fr
+customer_id: 9215651
+order_id: 
+customer_email: 
+customer_ip_address: 
+capture_day: 0
+capture_mode: AUTHOR_CAPTURE
+data: 
+-------------------------------------------

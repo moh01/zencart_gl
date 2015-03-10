@@ -1,0 +1,52 @@
+<?php
+
+/*  PDF Order Center 1.0 for Zen Cart v1.2.6d  and v1.2.7d
+ *  By Grayson Morris, (c) 2006
+ *  Printing sections based on Batch Print Center for osCommerce by Shaun Flanagan
+ *
+ * grid.php
+ *
+ */
+
+// set paper type and size
+if ($pageloop == "0") {   // initialize pdf settings
+
+  $pdf = new Cezpdf(A4,portrait);
+
+  $pdf->selectFont(DIR_PDFOC_FONTS . 'Helvetica.afm');
+  $pdf->setFontFamily(DIR_PDFOC_FONTS . 'Helvetica.afm');
+  
+  
+} else {  // print a grid
+
+  $y=10;
+  $i=0;
+  do
+  {
+    $i++;
+    $y = $y+20;
+    $pdf->setLineStyle(1);
+    $pdf->line(0,$y,600,$y);
+    $pdf->addText(0,$y,8,"$y");
+    $pdf->ezSetY($y);
+    $dup_y = $y;
+  }
+  while ($i<40);
+
+
+  $x=10;
+  $i=0;
+  do
+  {
+    $i++;
+    $x = $x+20;
+    $pdf->setLineStyle(1);
+    $pdf->line($x,0,$x,900);
+    $pdf->addText($x,0,8,"$x");
+    $pdf->ezSetY($x);
+    $dup_x = $x;
+  }
+  while ($i<30);
+
+}
+?>

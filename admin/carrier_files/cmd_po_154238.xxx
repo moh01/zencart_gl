@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenShipments xmlns="x-schema:OpenShipments.xdr">	  
+<OpenShipment ShipmentOption="" ProcessStatus="">
+<Receiver>
+	<CompanyName>PJD AUDIOVISUEL</CompanyName>
+	<ContactPerson>Eric DENIS</ContactPerson>
+	<AddressLine1>RUE JEAN JACQUES MENTION</AddressLine1>
+	<AddressLine2></AddressLine2>
+	<AddressLine3></AddressLine3>
+	<City>AMIENS CEDEX 2</City>
+	<CountryCode>FR</CountryCode>
+	<PostalCode>80081</PostalCode>
+	<Phone>03 22 66 60 00</Phone>
+	<EmailAddress1>pjd.achats@pjd-france.com</EmailAddress1>
+</Receiver>
+<Shipper>
+	<UpsAccountNumber>2A9663</UpsAccountNumber>
+</Shipper>
+<Shipment>
+	<ServiceLevel>ST</ServiceLevel>
+	<PackageType>CP</PackageType>
+	<NumberOfPackages>1</NumberOfPackages>
+	<ShipmentActualWeight>1</ShipmentActualWeight>
+	<DescriptionOfGoods>Projector lamp</DescriptionOfGoods>
+	<Reference1>154238</Reference1>
+	<Reference2></Reference2>
+	<BillingOption>PP</BillingOption>
+	<QuantumViewNotifyDetails>
+		<QuantumViewNotify>
+			<NotificationEMailAddress>pjd.achats@pjd-france.com</NotificationEMailAddress>
+			<NotificationRequest>5</NotificationRequest>
+		</QuantumViewNotify>
+		<FailureNotificationEMailAddress>ups@linats.net</FailureNotificationEMailAddress>
+		<ShipperCompanyName></ShipperCompanyName>
+		<SubjectLineOptions>SubjectLineOptions</SubjectLineOptions>
+		<NotificationMessage>NotificationMessage</NotificationMessage>
+	</QuantumViewNotifyDetails>
+	
+</Shipment>
+</OpenShipment>
+</OpenShipments>

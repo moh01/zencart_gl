@@ -1,0 +1,38 @@
+#########################################################################
+#
+#	Pathfile 
+#
+#	Liste fichiers parametres utilisés par le module de paiement
+#
+#########################################################################
+
+# ------------------------------------------------------------------------
+# Chemin vers le répertoire des logos depuis le web alias  
+# Exemple pour le répertoire www.merchant.com/cyberplus/payment/logo/
+# indiquer:
+# ------------------------------------------------------------------------
+#
+D_LOGO!/sites/zenCart/cyberplus/logo/!
+#
+#------------------------------------------------------------------------
+#  Fichiers parametres lies a l'api cyberplus paiement	
+#------------------------------------------------------------------------
+#
+# certificat du commercant
+#
+#F_CERTIFICATE!C:\Sites\zenCart\cyberplus\param\certif!
+F_CERTIFICATE!./param/certif!
+#
+# fichier paramètre commercant
+#
+#F_PARAM!C:\Sites\zenCart\cyberplus\param\parmcom!
+F_PARAM!./param/parmcom!
+#
+# fichier des  paramètres cyberplus
+#
+#F_DEFAULT!C:\Sites\zenCart\cyberplus\param\parmcom.cyberplus!
+F_DEFAULT!./param/parmcom.cyberplus!
+#
+# --------------------------------------------------------------------------
+# 	end of file
+# --------------------------------------------------------------------------

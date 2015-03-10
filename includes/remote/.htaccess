@@ -1,0 +1,10 @@
+ErrorDocument 401 /home/easylamp/www/sites/zenCart/page_forbidden.php
+ErrorDocument 403 /home/easylamp/www/sites/zenCart/page_forbidden.php
+AuthUserFile /home/easylamp/www/sites/zenCart/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Accès sécurisé au site el_admin"
+AuthType Basic
+<LIMIT GET POST>
+
+Require valid-user
+</LIMIT>

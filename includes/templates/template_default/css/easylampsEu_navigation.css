@@ -1,0 +1,85 @@
+#navigation {
+	list-style: none ;
+	padding: 0;
+	overflow: hidden ;		/* Création du contexte de formatage */
+	}
+
+#navigation li {
+	float: left ;
+	height:29px;
+}
+
+#navigation li.l1 {
+	width: 95px ;
+}
+
+#navigation li.l2 {
+	width: 107px ;
+}
+
+#navigation li.l3 {
+	width: 145px ;
+}
+
+#navigation li.l4 {
+	width: 170px ;
+}
+
+#navigation li.l5 {
+	width: 195px ;
+}
+
+
+#navigation li a {
+	display: block;
+	color: #fff;
+	padding: 4px 0;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10pt;
+	font-weight: bolder;
+	}
+
+#navigation li.l1 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL1.png) left top no-repeat ;
+}
+
+#navigation li.l2 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL2.png) left top no-repeat ;
+}
+
+#navigation li.l3 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL3.png) left top no-repeat ;
+}
+
+#navigation li.l4 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL4.png) left top no-repeat ;
+}
+
+#navigation li.l5 a {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL5.png) left top no-repeat ;
+}
+
+#navigation li a:hover, #nav li a:focus, #nav li a:active {
+/*	text-decoration: underline ;*/
+}
+
+#navigation li.l1 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL1.png) right top no-repeat ;
+}
+
+#navigation li.l2 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL2.png) right top no-repeat ;
+}
+
+#navigation li.l3 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL3.png) right top no-repeat ;
+}
+
+#navigation li.l4 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL4.png) right top no-repeat ;
+}
+
+#navigation li.l5 a:hover, #nav li a:focus, #nav li a:active {
+	background: url(../images/easylampsEu_bandeauSup_entreesMenuL5.png) right top no-repeat ;
+}

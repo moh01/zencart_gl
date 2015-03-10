@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rapport>
+<societe nom="EasyLamps">
+<adresse>
+<rue>33 rue de la révolution</rue>
+<ville>93100 Montreuil</ville>
+</adresse>
+<infos>
+<telephone>Tel: 33 (0)1.71.86.46.60</telephone>
+<fax>Fax	: 33 (0) 171 864 651</fax>
+<capital>Capital	: 4000 Euros</capital>
+<RCS>R.C.S.	: 489 702 514</RCS>
+<siret>Siret.	: 489 702 514 00022</siret>
+<cee>N/ld CEE	: FR 68 489 702 514</cee>
+</infos>
+</societe>
+<document date="07/11/2008" numero="BL0UUUU">
+<reference>Reference : </reference>
+<intitules>
+<articles>
+<en-tete>
+<c>Product</c>
+<c>Description</c>
+<c>Remaining</c>
+<c>Delivered</c>
+</en-tete>
+<en-tete2>
+<c>Product</c>
+<c>Description</c>
+<c>Price without VAT</c>
+</en-tete2>
+</articles>
+<rappelsHautDePage>Packing List	Date		Customer</rappelsHautDePage>
+<rappelsHautDePage2>Invoice        	Date		Customer</rappelsHautDePage2>
+</intitules>
+</document>
+<client numero="CLI00367">
+<livraison>
+<nom>TOP INFO SAS</nom>
+<adresse>
+<rue>145 Avenue GALLIENI</rue>
+<ville>93177 BAGNOLET CEDEX</ville>
+</adresse>
+</livraison>
+</client>
+<commandes>
+</commandes>
+</rapport>

@@ -1,0 +1,5 @@
+
+select distinct products_model from products order by 1;
+
+			 $sql = "select * from orders_products where po_orders_products_id = 0 and supplier_short_name = '". $supplier_short_name . "'";
+
