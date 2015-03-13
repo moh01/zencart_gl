@@ -1174,6 +1174,7 @@ echo $dml.'<br>';
 				                    and o.customers_country not in ( " . $zone_geo_values['it'] . " )
 				                    and o.customers_country not in ( " . $zone_geo_values['uk'] . " )								
 				                    and o.customers_country not in ( " . $zone_geo_values['ot'] . " )								
+				                    and o.customers_country not in ( " . $zone_geo_values['pl'] . " )								
 				                    and o.customers_country not in ( " . $zone_geo_values['sp'] . " )";
 			   }
 		  }

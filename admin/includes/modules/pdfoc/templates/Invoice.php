@@ -446,7 +446,7 @@ SIREN : 753 563 220   INTRACOM : FR09753563220";
      $store_address = "SAS Easylamps - zarowki-do-projektorow.pl  
 33 rue de la Révolution
 93100 Montreuil - Francja
-SIRET : 489 702 514 00048   numeru VAT : FR 68 489 702 514";
+SIRET : 489 702 514 00048   numer NIP : FR 68 489 702 514";
   }    
   else if ( $order->info['database_code'] == "es" )
   {
