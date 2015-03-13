@@ -5,7 +5,7 @@ echo '
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Nouvelle pièce</title>
+<title>Nouvelle pi&#232;ce</title>
 <link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
 </head>
 <body style=" { margin-top:10; margin-right:50; margin-bottom:50; margin-left:20; } ">';
@@ -57,7 +57,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	}
 
   
-    // on récupère les informations client
+    // on r&#233;cupÃ¨re les informations client
 				$sql = "select entry_company,
 				               customers_firstname,
 							   customers_lastname,
@@ -103,13 +103,13 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	  $TYPE_FACTURE[2]='Type';
       $TYPE_FACTURE[5]='Type';
 
-	  $SHIP_TO[2]='Envoyé à';
+	  $SHIP_TO[2]='Envoy&#233; &#224;';
       $SHIP_TO[5]='Ship to';
 
-	  $NUM_FACTURE[2]='Numéro facture';
+	  $NUM_FACTURE[2]='Num&#233;ro facture';
       $NUM_FACTURE[5]='Invoice #';
 
-	  $REF_CMD[2]='Réf. commande';
+	  $REF_CMD[2]='R&#233;f. commande';
       $REF_CMD[5]='Order ref.';
 
 	  $DATE_CMD[2]='Date cmde';
@@ -129,7 +129,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		   
       $db->connect($ext_db_server["gl"], $ext_db_username["gl"], $ext_db_password["gl"], $ext_db_database["gl"], USE_PCONNECT, false);				
 		   
-    if ( $show_actions || ($what==3)  )
+    if ( ($_GET['show_closed']=='0'|| $_GET['show_closed']=='1'))
 	{		 
 	    if ( $what!=3 )
 		{
@@ -145,10 +145,15 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		if ( strlen($_GET['ticket_id'])>0 )
 		  $ticket_condition = "t.id = " . $_GET['ticket_id'];
 		else if ( $_GET['show_closed']=='1')
-		  $ticket_condition = "1 = 1";		
-		else
+		  //$ticket_condition = "1 = 1";
+		  $ticket_condition = "s.active = 0";		
+		//else if ( $_GET['show_closed']=='0')
+		  //$ticket_condition = "0 = 0";
+		else if ($_GET['show_closed']=='0')
 		  $ticket_condition = "s.active = 1";
-		
+		else
+		$ticket_condition = "s.active = 1";
+			
 		$sql = " select t.id, t.ticket_type, t.date_created, t.recall_date, s.color,
 		                DATEDIFF(t.recall_date,now()) rappel_dans
 					from el_ticket t, el_ticket_status s
@@ -184,6 +189,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 			  echo ' <a href="javascript:popupWindow(\'handle_ticket.php?id='.$id.'\',\'height=400,screenX=400,screenY=400,top=400,left=400\')">';
 		   }
 	       echo '<img border=0 src="'. $ticket_type .'_note.gif">';
+           
            if ( $what!=3 )				   
 		   {
 			  echo '</a>';
@@ -235,7 +241,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 			}
 			
 			echo '</td>';	
-        		// affichage des CUF cachés
+        		// affichage des CUF cach&#233;s
 			   $sql4 = "select prompt,text_fr, suggestion_value, ticket_status_id
 						from el_ticket_cuf, el_ticket_note
 						where el_ticket_note.ticket_id = ". $id ."
@@ -257,7 +263,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		       if ( $first == 0 )
 			   {
 				   echo '<td valign="top">';
-				   echo '<b>Autres propriétés</b>';
+				   echo '<b>Autres propri&#233;t&#233;s</b>';
 	               echo '<hr>';	
 				   $first = 1;
 			   }
@@ -283,7 +289,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	
 	 $couleur_reglee = "dbdaeb";
 	 $couleur_non_reglee = "e7cad4"; 
-      // les  libellés fonction de la langue 
+      // les  libell&#233;s fonction de la langue 
      // FV 1 er fevrier 2010  on cache because les gens ne regardent pas...
      //$db->connect($ext_db_server[$customer_db], $ext_db_username[$customer_db], $ext_db_password[$customer_db], $ext_db_database[$customer_db], USE_PCONNECT, false);				
 	 // if ( ( $what != 2 ) && ( $what != 3 ) )
@@ -340,7 +346,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				   and     orders_id = " . $recordSet->fields['orders_id']  ."
 				   order by  sort_order";
 			
-			$QTY_CMD[2]='Qté command.';
+			$QTY_CMD[2]='Qt&#233; command.';
 			$QTY_CMD[5]='Ordered Qty';
 
 			$RELIQUAT[2]='Reliquat';
@@ -401,7 +407,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
     $BALANCE_DUE[5] = 'Outstanding balance due  ';
     $BALANCE_T[2] = 'Balance totale due ';
     $BALANCE_T[5] = 'Total balance due ';
-    $CREDIT[2] = 'Montant crédit';
+    $CREDIT[2] = 'Montant cr&#233;dit';
     $CREDIT[5] = 'Credit amount ';
 
 	 //$_SESSION['currency'] = 'GBP';
@@ -434,15 +440,16 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	  {
 	      $link = "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&what=2";
 		  $link2 =  "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&show_closed=1";
-		  
+		  $link3 = "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&show_closed=0";
+
 	      echo '<table><tr><td>
 		        <b>Factures client</b> 
 	             </td>
 				 <td>
-				    <table><tr><td bgcolor="'.$couleur_non_reglee.'"> &nbsp;&nbsp;&nbsp; Non réglées &nbsp;&nbsp;&nbsp; </td></tr></table>
+				    <table><tr><td bgcolor="'.$couleur_non_reglee.'"> &nbsp;&nbsp;&nbsp; Non r&#233;gl&#233;es &nbsp;&nbsp;&nbsp; </td></tr></table>
 	             </td>
 				 <td>
-				    <table><tr><td bgcolor="'.$couleur_reglee.'"> &nbsp;&nbsp;&nbsp; Réglées &nbsp;&nbsp;&nbsp; </td></tr></table>
+				    <table><tr><td bgcolor="'.$couleur_reglee.'"> &nbsp;&nbsp;&nbsp; R&#233;gl&#233;es &nbsp;&nbsp;&nbsp; </td></tr></table>
 	             </td>			 
 				 <td>
 				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link.'">Etat de compte</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
@@ -451,8 +458,11 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link.'&languages_id=5">Balance statement</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
 	             </td>		
 				 <td>
-				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link2.'">Montrer les RMA fermés</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
+				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link2.'">Montrer les RMA ferm&#233;s</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
 	             </td>					 
+				 <td>
+				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link3.'">Montrer les RMA ouverts</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
+	             </td>
 				 </tr></table>';
 		}
 		else
