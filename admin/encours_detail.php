@@ -770,8 +770,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				
 				echo $dml;
 				$result = mysql_query($dml);*/
-				//var_dump($tab_facture);
-				//var_dump(count($tab_facture));
+				
 			$i = count($tab_facture) - 1;
 			//echo $i;
 			while ($i>= 0)
