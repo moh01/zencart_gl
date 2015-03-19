@@ -40,22 +40,85 @@ $bds = array("eu","fr","es","de","en","it","bf","hp","rq","pl","tb");
 				and languages_id = 7 '; 
 		$db->Execute($dml);
 	}
-
-	
+//735995
 /// 61480   Eurotecno // bluechip 84068
     if ( $dtb == "eu"  )
 	{
 		$dml= 	" update orders 
-					set payment_conditions_code='30FM',payment_conditions_desc='30 days end of Month'
-					where customers_id in (85298,85298,85301,80259,
-					85299,85295,80021,80293,
-					81441,81439,80230,85444,88273,
-					80111,80019,81433,80279,
-					80102,80106,86265,80036,80038,80482,
-					83688,83494,86268,80307,61480,86236,84068,80633,87579,
-					85516,86341,89267,80020,82820) ";
-	// 85516 86341
-		$db->Execute($dml);	
+					set payment_conditions_code='30FM',
+						payment_conditions_desc='30 days end of Month'
+					where orders.customers_id in ( select customers.customers_id
+													from customers 
+													where customers.max_credit > 10
+													and  customers.customers_id = orders.customers_id
+													and orders.languages_id=5 )
+					 and  TO_DAYS(date_purchased)=TO_DAYS(now()) ";
+													
+		 $db->Execute($dml);	
+
+		$dml= 	" update orders 
+					set payment_conditions_code='30FM',
+						payment_conditions_desc='30 jours fin de mois'
+					where orders.customers_id in ( select customers.customers_id
+													from customers 
+													where customers.max_credit > 10
+													and  customers.customers_id = orders.customers_id
+													and orders.languages_id=2 ) 
+					 and  TO_DAYS(date_purchased)=TO_DAYS(now()) ";
+													
+													
+		 $db->Execute($dml);	
+
+		$dml= 	" update orders 
+					set payment_conditions_code='30FM',
+						payment_conditions_desc='30 dias fin del mes'
+					where orders.customers_id in ( select customers.customers_id
+													from customers 
+													where customers.max_credit > 10
+													and  customers.customers_id = orders.customers_id
+													and orders.languages_id=3 ) 
+					 and  TO_DAYS(date_purchased)=TO_DAYS(now()) ";
+													
+													
+		 $db->Execute($dml);	
+
+		$dml= 	" update orders 
+					set payment_conditions_code='30FM',
+						payment_conditions_desc='30 days end of Month'
+					where orders.customers_id in ( select customers.customers_id
+													from customers 
+													where customers.max_credit > 10
+													and  customers.customers_id = orders.customers_id
+													and orders.languages_id=4 ) 
+					 and  TO_DAYS(date_purchased)=TO_DAYS(now()) ";													
+													
+		 $db->Execute($dml);	
+		 
+		$dml= 	" update orders 
+					set payment_conditions_code='30FM',
+						payment_conditions_desc='30 giorni fine mese'
+					where orders.customers_id in ( select customers.customers_id
+													from customers 
+													where customers.max_credit > 10
+													and  customers.customers_id = orders.customers_id
+													and orders.languages_id=6 ) 
+					 and  TO_DAYS(date_purchased)=TO_DAYS(now()) ";													
+													
+		 $db->Execute($dml);	
+		 
+		$dml= 	" update orders 
+					set payment_conditions_code='30FM',
+						payment_conditions_desc='Platnosc na koniec miesiaca po 30 dniach'
+					where orders.customers_id in ( select customers.customers_id
+													from customers 
+													where customers.max_credit > 10
+													and  customers.customers_id = orders.customers_id
+													and orders.languages_id=7 ) 
+					 and  TO_DAYS(date_purchased)=TO_DAYS(now()) ";													
+													
+		 $db->Execute($dml);	
+
+		 
 	}
 	if ( strlen($_GET['oId'])>0 )
 	{

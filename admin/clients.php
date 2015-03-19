@@ -47,6 +47,7 @@ echo '</head>
 	                  <option value="rma">rma
 					  <option value="relance">relance
 					  <option value="compta">compta
+					  <option value="blocage">blocage					  
 					 </select>';
 					 
     $html_select = eregi_replace('"'.$_GET['ticket_type'].'"' , '"'.$_GET['ticket_type'].'" SELECTED' ,$html_select );
@@ -119,8 +120,10 @@ echo '</head>
 	   $sql = "select distinct customers_id cID
 				from el_ticket t, el_ticket_status s
 				where t.status = s.id  ". $add_condi  ."
-				and   s.ticket_type = '" . $_GET['ticket_type'] .  "'";
+				and   s.ticket_type = '" . $_GET['ticket_type'] . "'" 
+				. $add_condi;
 
+//echo $sql;exit;		
 				// 			
 				
 		$rs = $db->Execute($sql);

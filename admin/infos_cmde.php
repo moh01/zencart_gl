@@ -43,8 +43,11 @@ function get_order_header ( $source_db, $orders_id )
   if ($source_db=="eu")
   {
 		
-		 $db->connect($ext_db_server[$source_db], $ext_db_username[$source_db], $ext_db_password[$source_db], $ext_db_database[$source_db], USE_PCONNECT, false);  
-        $sql = "select customers_company, customers_name,  customers_telephone, 
+ 	  $db->connect($ext_db_server[$source_db], $ext_db_username[$source_db], $ext_db_password[$source_db], $ext_db_database[$source_db], USE_PCONNECT, false);  
+
+// le client est il bloqué ? 		 
+
+		 $sql = "select customers_company, customers_name,  customers_telephone, 
 		               customers_country, customers_id,payment_module_code
 		        from orders	 where  orders_id = ". $orders_id;
 				
@@ -58,7 +61,21 @@ function get_order_header ( $source_db, $orders_id )
 		$customers_country = $rs->fields['customers_country'];
 		$customers_id = $rs->fields['customers_id'];
 		$payment_module_code = $rs->fields['payment_module_code'];
-		
+
+ 	  $sql = "select 1 bloque
+			   from bo_gl.el_ticket, bo_gl.el_ticket_status
+			  where  active=1
+			    and el_ticket.status = el_ticket_status.id
+               and  customers_id = ".$customers_id;
+	  $rs = $db->Execute($sql);
+	  
+	  $bloque = $rs->fields['bloque'];
+	  
+	  if ( $bloque > 0 )
+	  {
+		  return '<b><u>!!!!!  ATTENTION CLIENT BLOQUÉ !!!!!!!!!! </u></b>';
+	  }
+	  
  	  $sql = "select max_credit from customers where customers_id = ".$customers_id;
 	  $rs = $db->Execute($sql);
 	//if ( $rs->fields['en_cours']>0 )
