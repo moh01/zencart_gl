@@ -454,6 +454,7 @@ if (($_GET['page'] == '' or $_GET['page'] <= 1) and $_GET['oID'] != '') {
 		                  <option value="sp">Espagne
 		                  <option value="de">Allemagne
 		                  <option value="uk">Royaume uni  
+		                  <option value="pl">Pologne						  
 		                  <option value="it">Italie
 		                  <option value="eu">Autres Europe
 		                  <option value="ot">Monde hors Europe						  

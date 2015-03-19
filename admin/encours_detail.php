@@ -9,19 +9,16 @@ echo '
 <link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
 </head>
 <body style=" { margin-top:10; margin-right:50; margin-bottom:50; margin-left:20; } ">';
-
 echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 								function popupInvoice(url) {
 								  window.open(url,'popupWindowI','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=800,height=600,screenX=800,screenY=600,top=100,left=100')
 								}
 	//--></script>";
-
 echo "<script language=\"javascript\" type=\"text/javascript\"><!--
   function popupWindow(url, features) {
     window.open(url,'popupWindow',features)
   }							
 	//--></script>";
-
   
   if (!isset($currencies)) {
 	require(DIR_WS_CLASSES . 'currencies.php');
@@ -32,6 +29,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	$customers_id = $_GET['customers_id'];
 	$what = $_GET['what'];
 	$languages_id = $_GET['languages_id'];
+	$paiement=$_GET['paiement'];
 
     if (strlen($languages_id)==0)
 	{
@@ -46,7 +44,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
     {
 	   $show_actions = 0;
     }	
-
 	$db->connect($ext_db_server[$customer_db], $ext_db_username[$customer_db], $ext_db_password[$customer_db], $ext_db_database[$customer_db], USE_PCONNECT, false);				
 	
     //	$what = 2;	
@@ -55,7 +52,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	   $dml = "update orders set orders_status = 3 where orders_id = " . $_GET['deliver_orders_id'];
 	   $db->Execute($dml);
 	}
-
   
     // on r&#233;cupère les informations client
 				$sql = "select entry_company,
@@ -74,14 +70,11 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
      			$sql1="
      				select currency from orders where 
      			customers_id = " .$customers_id;
-
      $recordSet = $db->Execute($sql);					
 	 $recordSet1 = $db->Execute($sql1);
 	 $max_credit = $recordSet->fields['max_credit'];
 	 $currency = $recordSet->fields['default_currency'];
 	 $customer_currency = $recordSet1->fields['currency'];
-
-
 	 echo '<table>
 	       <tr bgcolor="f3f3f3">
 		   <td width="250">'. $recordSet->fields['entry_company'] .' ('. $customers_id . ')</td>
@@ -99,25 +92,18 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	  
 	  $ETAT_COMPTE[2] = 'Etat de compte client';	  
 	  $ETAT_COMPTE[5] = 'Client balance';
-
 	  $TYPE_FACTURE[2]='Type';
       $TYPE_FACTURE[5]='Type';
-
 	  $SHIP_TO[2]='Envoy&#233; &#224;';
       $SHIP_TO[5]='Ship to';
-
 	  $NUM_FACTURE[2]='Num&#233;ro facture';
       $NUM_FACTURE[5]='Invoice #';
-
 	  $REF_CMD[2]='R&#233;f. commande';
       $REF_CMD[5]='Order ref.';
-
 	  $DATE_CMD[2]='Date cmde';
       $DATE_CMD[5]='Order Date';
-
 	  $DATE_FACTURE[2]='Date Facture';
       $DATE_FACTURE[5]='Invoice Date';
-
 	  $REF_PAIEMENT[2]='Ref. paiement';
       $REF_PAIEMENT[5]='Payment ref.';
 	  
@@ -288,7 +274,8 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	}
 	
 	 $couleur_reglee = "dbdaeb";
-	 $couleur_non_reglee = "e7cad4"; 
+	 $couleur_non_reglee = "e7cad4";
+	 $couleur_avoirs = "LightGreen"; 
       // les  libell&#233;s fonction de la langue 
      // FV 1 er fevrier 2010  on cache because les gens ne regardent pas...
      //$db->connect($ext_db_server[$customer_db], $ext_db_username[$customer_db], $ext_db_password[$customer_db], $ext_db_database[$customer_db], USE_PCONNECT, false);				
@@ -296,7 +283,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	 if ( false )
 	 {
 		  echo '<br><br>';
-
 			$sql = "SELECT o.orders_id, date_format(o.date_purchased,\"%d-%c-%Y\") date_purchased , o.delivery_name, o.customers_telephone, o.customers_email_address,
 	                               o.billing_name,o.delivery_name, ot.text as order_total, s.orders_status_name,
 								   o.orders_status, o.ref_info
@@ -336,10 +322,8 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	        $nb = $rs->fields["cnt"]+2;
 	        echo '<td rowspan='. $nb . '>';
 	        echo $REF_CMD[$languages_id].":<b>". $recordSet->fields['orders_id'] . '/'. $recordSet->fields['ref_info']. "</b><br>&nbsp;&nbsp;&nbsp;". $DATE_CMD[$languages_id].":<b>". $recordSet->fields['date_purchased']. "</b><br>&nbsp;&nbsp;&nbsp;". $SHIP_TO[$languages_id].":<b>". $recordSet->fields['delivery_name'].'</b><br>';
-
 			echo '&nbsp;&nbsp;<a href="javascript:if (confirm(\'Voulez vous livrer cette commande ?\')) { document.location=\'encours_detail.php?customer_db='.$customer_db.'&customers_id='.$customers_id.'&deliver_orders_id='.$recordSet->fields['orders_id'].'\';}">Livrer</a>';
 			echo '</td>';
-
 			$sql = "select * 
 			       from orders_products 
 			       where   products_model not in('CODF','SHF','ECOF') 
@@ -348,18 +332,14 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 			
 			$QTY_CMD[2]='Qt&#233; command.';
 			$QTY_CMD[5]='Ordered Qty';
-
 			$RELIQUAT[2]='Reliquat';
 			$RELIQUAT[5]='Remaining';
-
 			$PRODUCT[2]='Produit';
 			$PRODUCT[5]='Product';
-
 			echo '<tr><th align=left>' . $QTY_CMD[$languages_id] .' </th> <th align=left>' . $RELIQUAT[$languages_id] .' </th><th align=left>' . $PRODUCT[$languages_id] .' </th></tr>';
 			
 	    	$recordSetPrd = $db->Execute($sql);
 			
-
 			while ( !$recordSetPrd->EOF  )
 			{
 				/*if ($recordSet->fields['invoice_type'] == 'CR')
@@ -369,7 +349,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				echo '<td>';
 				echo $recordSetPrd->fields['products_quantity'];
 				echo '</td>';
-
 				echo '<td>';
 				if ( $recordSet->fields['orders_status']==1 )
 				{
@@ -384,7 +363,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				    zen_image(DIR_WS_IMAGES . 'icon_edit3.gif', 'Informations livraison') . '</a>';									  					
 				}
 				echo '</td>';
-
 				echo '<td>';
 				echo $recordSetPrd->fields['products_model'].' '.$recordSetPrd->fields['products_name'];						
 				echo '</td>';
@@ -401,7 +379,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
     //  section des commandes  encours clients -------------------------------------
 //	if ( false )
 	
-
 	// define
     $BALANCE_DUE[2] = 'Balance due echue ';
     $BALANCE_DUE[5] = 'Outstanding balance due  ';
@@ -409,7 +386,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
     $BALANCE_T[5] = 'Total balance due ';
     $CREDIT[2] = 'Montant cr&#233;dit';
     $CREDIT[5] = 'Credit amount ';
-
 	 //$_SESSION['currency'] = 'GBP';
     // $customer_currency = 'GBP';
       
@@ -432,15 +408,16 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 */
 	if ( $what!=3 )
 	{
-
 	
 	  $db->connect($ext_db_server['gl'], $ext_db_username['gl'], $ext_db_password['gl'], $ext_db_database['gl'], USE_PCONNECT, false);				
 	  
 	  if ( $show_actions == 1 )
 	  {
+	      
 	      $link = "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&what=2";
 		  $link2 =  "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&show_closed=1";
 		  $link3 = "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&show_closed=0";
+	      $link4 = "encours_detail.php?customers_id=".$customers_id."&customer_db=".$customer_db."&paiement=1";
 
 	      echo '<table><tr><td>
 		        <b>Factures client</b> 
@@ -450,7 +427,15 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	             </td>
 				 <td>
 				    <table><tr><td bgcolor="'.$couleur_reglee.'"> &nbsp;&nbsp;&nbsp; R&#233;gl&#233;es &nbsp;&nbsp;&nbsp; </td></tr></table>
-	             </td>			 
+	             </td>
+	             <td>
+				  <table><tr><td bgcolor="'.$couleur_avoirs.'"> &nbsp;&nbsp;&nbsp; Avoirs &nbsp;&nbsp;&nbsp; </td></tr></table>
+	             </td>		 
+				 
+				 <td>
+				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link4.'">Saisi paiement</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
+	             </td>
+
 				 <td>
 				    <table><tr><td> &nbsp;&nbsp;&nbsp;<a href="'.$link.'">Etat de compte</a>  &nbsp;&nbsp;&nbsp; </td></tr></table>
 	             </td>			 				 
@@ -475,7 +460,7 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				 </table>
 				 <br><br>';		    
 		}
-	    if ( $what ==2 )
+	    if ( $what ==2 || $paiement ==1)
 		{
 		   $condition = " AND o.orders_status = 2 ";
 		}
@@ -500,7 +485,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
                         ORDER BY   invoice_date desc ";
 //echo $sql;exit;						
 	
-
     echo '<table width=800 style="margin-top:80px;">';	
 	 echo '<tr>';		 
      echo '<th>' . $TYPE_FACTURE[$languages_id] .'</th>';
@@ -512,18 +496,15 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	 echo '<th>' . $RETARD_PAIEMENT[$languages_id] .'</th>';	 
      echo '<th>' . $MONTANT_FACTURE[$languages_id] .'</th>';
 	
-
 	 if ( $show_actions == 1 )
 	 {
 	     echo '<th>Detail</th>';
-	     echo '<th>Action</th>';	 
+	     echo '<th>Montant</th>';	 
 	 }
 	 echo '</tr>';		 
 	 $total_du = 0;
 	 $recordSet = $db->Execute($sql);
 	 $balance_du = 0;
-
-
 	 while ( ! $recordSet->EOF )
 	 {
 	    if ( $recordSet->fields['orders_status']!=2 )
@@ -539,7 +520,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		{
     	    echo '<tr bgcolor="'. $couleur_non_reglee .'">';
 		}
-
 		
 	    echo '<td>';
           echo $recordSet->fields['invoice_type'];
@@ -556,7 +536,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	    echo '<td>';
           echo $recordSet->fields['date_facture'];
 	    echo '&nbsp;&nbsp;&nbsp;</td>';
-
 	    echo '<td>';
 		
 		if ($recordSet->fields['payment_amount']!=0)
@@ -590,7 +569,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		else
 		   $retard = $recordSet->fields['retard30'];		
 		
-
 		/*$i = 0;
 		while (isset($retard) > 0)
 		{
@@ -600,7 +578,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 			$i++;
 		}*/
 		//echo $balance_du;
-
 	
 		if ($retard <= 0)   
 		   $retard = "";
@@ -611,7 +588,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 			else
 			   $highlight = 'bgcolor="Tomato"';		   
 		}
-
 		if ( $recordSet->fields['orders_status']!=2  )
 		{
 		   $retard = "";
@@ -638,6 +614,8 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		//$total_du += $recordSet->fields['amount'] * $recordSet->fields['currency_value'];
 		$total_du += $recordSet->fields['amount'];
 		echo $recordSet->fields['order_total'];
+		$tab_facture[] = array('Montant' => $recordSet->fields['amount'], 
+								'orders_id' => $recordSet->fields['orders_id'],);
 		}
 		else
 		{
@@ -646,9 +624,11 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		  //echo ( $currencies->format(-1*$recordSet->fields['amount']) );
 //		    echo $recordSet->fields['order_total'];
    		   echo ( $currencies->format(-1*$recordSet->fields['amount'],1,$customer_currency,$recordSet->fields['currency_value'] ));
-
 		  //echo $currency;
 		//echo ( -1*$recordSet->fields['amount'] );
+   		 	$tab_facture[] = array('Montant' => -1*$recordSet->fields['amount'],
+   		 		'orders_id' => $recordSet->fields['orders_id'],
+   		 	 );
 		}
 	    echo '&nbsp;&nbsp;&nbsp;</td>';
 		if ($retard > 0)
@@ -675,7 +655,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 				}	
 			}
 			
-
 		//$balance_du = $recordSet->fields['amount'] + $recordSet->fields['order_total'];
 		//echo $balance_du;
 		
@@ -684,7 +663,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		
  		//$balance_du[2] = "Balance_due";
  		//$balance_du[2] = "Balance_due";
-
 		
 	    if ( $show_actions == 1 )
 	    {		
@@ -693,11 +671,33 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		  echo '<a href="javascript:popupInvoice(\''.$link.'\');"  title='. $recordSet->fields['payment_conditions_code'] . '> Voir </a>';
 		    echo '&nbsp;&nbsp;&nbsp;</td>';				
 	        echo "<td>";
+
 			if ( ( $recordSet->fields['orders_status']==2)  && ( $_SESSION['admin_id']!=2 ) )
 			{
+			
+				if ($paiement == 1)
+				{
+					/*if ( $recordSet->fields['invoice_type']=="CR" )
+						$recordSet->fields['order_total'] = $recordSet->fields['order_total'] * -1;
+					
+					$tab[]  = array('montant' => $recordSet->fields['order_total']);
+					*/
+
+					$hello = "montant".$recordSet->fields['orders_id'];
+					echo '
+					<form method=post action="">
+						<input type="text" name="'.$hello.'"><br>
+					
+					';
+					echo $_POST[$hello];
+
+				}
+				else
+				{
 				  echo '&nbsp;&nbsp;&nbsp;<a href="javascript:popupWindow(\'' .
 				  zen_href_link(FILENAME_SUPER_EDIT, 'oID=' . $recordSet->fields['orders_id']  . '&target=payment_mode', 'NONSSL') . '\', \'scrollbars=yes,resizable=yes,width=400,height=500,screenX=150,screenY=300,top=100,left=150\')">' .
 				  zen_image(DIR_WS_IMAGES . 'icon_edit3.gif', 'Informations de paiement') . '</a>';									  
+				}
 			}
 			else
 			{
@@ -709,10 +709,176 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 		
 	    $recordSet->MoveNext();
 	 }
-
-    }	
-
+    }
 	
+    if ($paiement == 1)
+	{
+
+		
+		echo '
+		
+		<center><b> Montant_totale : </b><input type="text" name="montant" ><br>
+		</center>
+		<b> Reference_payement : </b> <input type="text" name="reference"><br>
+		<b> customers_id : </b> <input type="text" name="customer"><br>
+
+		<input type="submit" value="enregistrer" name="enregistrer" style="position:absolute;top:550px;margin-left:200px;"/>
+		<input type="submit" value="valider" name="valider" style="position:absolute;top:550px;"/>
+		
+		</form>';
+		
+		echo $_POST[$hello];
+		/*$sql = "select payment_id from orders_payment where statut=en_cours and customers_id='".$customers_id;
+		$rsm = $db->Execute($sql);
+		$payment_id = $rsm->fields["payment_id"];		
+		*/
+		//echo $payement;
+
+		if (isset($_POST['montant']) && isset($_POST['reference']) )
+		{
+			if ($_POST['enregistrer'] == "enregistrer")
+			{
+				$_SESSION['montant'] = $_POST['montant'];
+				//echo $_SESSION['montant'];
+				$dml = "  INSERT INTO `orders_payment` 
+								( `payment_date`, `payment_reference`,
+								 `uncharged_amount`,  `amount`, `statut`, `customers_id`)
+						VALUES
+							( now(), '".$_POST['reference']."', 
+							 '', '".$_POST['montant']."', 'en_cours', '".$_POST['customer']."')";
+
+				echo $dml;
+				$result = mysql_query($dml);
+			//$sql = "select id "
+			/*echo $_POST['reference'];
+			echo $_POST['enregistrer'];
+			echo $_POST['valider'];
+			*/
+			//echo $_POST['customer'];
+			echo $a;
+
+			}
+			else if ($_POST['valider'] == "valider" )
+			{
+							
+				
+				$montant_total = $_SESSION['montant'];
+
+				/*$dml = " update orders_payment 
+							set payment_date = now(), payment_reference = '".$_POST['reference']."', uncharged_amount = '', amount='".$_POST['montant']."', statut='valide', customers_id='".$customers_id."' 
+							where statut='en_cours' and customers_id='".$_POST['customer']."'";
+				
+				echo $dml;
+				$result = mysql_query($dml);*/
+				//var_dump($tab_facture);
+				//var_dump(count($tab_facture));
+			$i = count($tab_facture) - 1;
+			//echo $i;
+			while ($i>= 0)
+			{
+				//echo "je suis le ii == ".$i;
+				//if (($montant_total < 0  && $tab_facture[$i]['Montant'] > $montant_total) || ($montant_total > 0))
+				if (($montant_total > 0 ) && ($montant_total < $tab_facture[$i]['Montant']) && ($tab_facture[$i - 1]['Montant'] < 0))
+				{
+					
+					echo "je suis le montant_total ".$montant_total;
+					echo '<br>';
+					echo  "je suis dans la facture ".$tab_facture[$i]['Montant'];
+					echo '<br>';
+					
+					$montant_total = $montant_total - $tab_facture[$i]['Montant'];
+					echo '<br>';
+					echo "je suis le new totale ".$montant_total;
+					echo '<br>';
+				}
+				else if (($montant_total < 0 ) && $tab_facture[$i]['Montant'] < $montant_total)
+				{
+
+					echo "je suis le montant_total ".$montant_total;
+					echo '<br>';
+					echo  "je suis dans la facture ".$tab_facture[$i]['Montant'];
+					echo '<br>';
+				//	echo "je suis le iii == ".$i;
+				//	echo $montant_total;
+					
+				//	echo $tab_facture[$i - 1]['Montant'];	
+				//echo $tab_facture[$i]['Montant'];
+					$montant_total = $montant_total - $tab_facture[$i]['Montant'];
+					//echo $montant_total;
+					echo '<br>';
+					echo "je suis le nouveau montant_total  ".$montant_total;
+					echo '<br>';
+				}
+				else if (($montant_total > 0 ) && $tab_facture[$i]['Montant'] < $montant_total)
+				{
+
+					echo "je suis le nouveau montant_total ".$montant_total;
+					echo '<br>';
+					echo  "je suis dans la facture ".$tab_facture[$i]['Montant'];
+					echo '<br>';
+				//	echo "je suis le iii == ".$i;
+				//	echo $montant_total;
+					
+				//	echo $tab_facture[$i - 1]['Montant'];	
+				//echo $tab_facture[$i]['Montant'];
+					$montant_total = $montant_total - $tab_facture[$i]['Montant'];
+					//echo $montant_total;
+					echo '<br>';
+					echo "je suis le new montant_total  ".$montant_total;
+					echo '<br>';
+				}
+				else if ($montant_total > 0 && $tab_facture[$i]['Montant'] > 0 && ($montant_total < $tab_facture[$i]['Montant']) && ($tab_facture[$i - 1]['Montant'] > 0))
+				{
+					//$tab_facture[$i]['Montant'] = $tab_facture[$i]['Montant'] - $montant_total;
+					 
+					 $tab_facture[$i]['Montant'] = $tab_facture[$i]['Montant'] - $montant_total ;
+					//$rest_fact = $tab_facture[$i]['Montant'] - $montant_total;
+					 $montant_total = $montant_total - $montant_total;
+					echo "je suis tab_facture  ".$tab_facture[$i]['Montant'];
+					echo '<br>';
+					//echo "je suis le rest ".$rest_fact;
+					echo '<br>';
+					echo "montant_total ".$montant_total;
+					echo '<br>';
+				}
+
+				$i--;
+			}
+			
+		}
+
+			
+		//calculer le prix avec le montant totale
+
+			//for ($_POST[])
+
+
+		} 
+
+
+		
+		/*$dml = "  INSERT INTO `orders_payment` 
+								( `payment_date`, `payment_reference`,
+								 `uncharged_amount`,  `amount`)
+						VALUES
+							( now(), '".$_POST['reference']."', 
+							 '', '".$_POST['montant']."')";
+
+		inserer les bonne valeurs
+    */
+	/*
+	recuperer les numero de factures des plus anciennes au plus recentes 
+	apres récperer leurs order_id apres recuperer la valeur a chaque fois faire montant - balance du a chaque fois qu'il ya un num de facture
+
+	1------recuperer le tableau des factures impayer commencer de la fin et enlever la somme qu'il faut et la somme totale
+	des que j'enregistre je les mets dans un tableau je le parcours et j'enleve de ma somme.	
+	calcule du montant a enlever
+	*/
+	//$dml = "select "
+
+	}
+    
+
     if ( $show_actions != 1)
 	 	{
 	 		echo '<table style="position:absolute;top:80px; margin-left:150px;">
@@ -738,7 +904,6 @@ echo "<script language=\"javascript\" type=\"text/javascript\"><!--
 	 
 echo '</body>	 
 </html>';
-
 	  /*$customers_company = str_replace("'","",$rsc->fields['customers_company']);
 				  $database_code = $rsc->fields['database_code'];
 				  $customers_country = $rsc->fields['customers_country'];
@@ -752,7 +917,6 @@ echo '</body>
 				  $rsm = $db->Execute($sql);
 				  $max_credit = $rsm->fields["max_credit"];
 				  
-
 				$sql = "SELECT sum(order_total) en_cours
 							 FROM     orders
 							 WHERE    orders_status=2 

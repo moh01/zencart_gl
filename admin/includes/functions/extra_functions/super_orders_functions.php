@@ -463,7 +463,7 @@ La validité de cette facture proforma est de 15 jours.";
 			$comments_text[2].=	"		
 Vous pouvez enregistrer une commande correspondant à cette facture proforma: 
 - Pour une commande administrative, indiquez le numéro de la facture Proforma sur le bon de commande
-    vous pouvez nous adresser ce bon de commande par fax au + 33 (0) 1 71 86 46 51..
+    vous pouvez nous adresser ce bon de commande par fax au + 33 (0)9 72 22 76 85..
 - Pour un paiement par chèque ou virement, indiquez le numéro de la facture Proforma en accompagnement de votre règlement.
 - Pour un paiement par carte de crédit; veuillez nous appeler pour procéder au paiement par téléphone ou créer une nouvelle commande.";
 			}

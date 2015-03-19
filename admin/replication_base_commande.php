@@ -5,13 +5,16 @@
 //$bds = array("fr");
 //$bds = array("eu");
  // $bds = array("fr","eu");
- $bds = array("eu","fr","es","de","en","it","bf","hp","rq","tb","pl");
- 
+// $bds = array("fr","es","de","en","it","bf","hp","rq","pl","tb","eu");
+// $bds = array("fr","es","de","en","it","bf","hp","rq","pl","tb");
+// $bds = array("pl","tb");
+$bds = array("eu","fr","es","de","en","it","bf","hp","rq","pl","tb");
  $cnt = 0;
  
  foreach ($bds as $dtb) 
  {
 	$db->connect($ext_db_server[$dtb], $ext_db_username[$dtb], $ext_db_password[$dtb], $ext_db_database[$dtb], USE_PCONNECT, false);  
+	
 	
 	$dml = "update orders 
 			set customers_countries_id = (select entry_country_id
@@ -28,20 +31,32 @@
 			
     $db->Execute($dml);
 	
+    if ( ( $dtb == "eu"  ) || ( $dtb == "pl"  ) )
+	{
+		$dml = 'update orders
+				set orders.billing_name = ""
+				where orders.billing_name not like "-%"
+				and length(billing_company)>3
+				and languages_id = 7 '; 
+		$db->Execute($dml);
+	}
+
 	
 /// 61480   Eurotecno // bluechip 84068
-	$dml= 	" update orders 
-				set payment_conditions_code='30FM',payment_conditions_desc='30 days end of Month'
-				where customers_id in (85298,85298,85301,80259,
-				85299,85295,80021,80293,
-				81441,81439,80230,85444,88273,
-				80111,80019,81433,80279,
-				80102,80106,86265,80036,80038,80482,
-				83688,83494,86268,80307,61480,86236,84068,80633,87579,
-				85516,86341,89267,80020,82820) ";
-// 85516 86341
-	$db->Execute($dml);	
-	
+    if ( $dtb == "eu"  )
+	{
+		$dml= 	" update orders 
+					set payment_conditions_code='30FM',payment_conditions_desc='30 days end of Month'
+					where customers_id in (85298,85298,85301,80259,
+					85299,85295,80021,80293,
+					81441,81439,80230,85444,88273,
+					80111,80019,81433,80279,
+					80102,80106,86265,80036,80038,80482,
+					83688,83494,86268,80307,61480,86236,84068,80633,87579,
+					85516,86341,89267,80020,82820) ";
+	// 85516 86341
+		$db->Execute($dml);	
+	}
 	if ( strlen($_GET['oId'])>0 )
 	{
 		if ($_GET['enforce']==1)
@@ -85,7 +100,7 @@
 			  where  orders_id not in (62185,65663)	
 			  ".$addwhere."
 			  order by date_purchased desc";
-//echo $sql; exit;			  
+			  
 			  
 /*			  
 $sql = "select orders_id, customers_id , 
@@ -100,6 +115,8 @@ order by date_purchased desc";
 	 $rs=$db->Execute($sql);
 	 while (!$rs->EOF)
 	 {
+echo '['. $dtb.']'. $rs->fields["orders_id"].'<br>';			  
+		 
 //echo $rs->fields["date_modif"]. "|". $rs->fields["date_courante"];
 	    $tab_database[] = $dtb;	 
 	 
@@ -148,10 +165,7 @@ ref_info
 					where orders_id =  ". $rs->fields["orders_id"];
              
 			$db->Execute($dml);
-	if ( $rs->fields["orders_id"]==132820 )
-	{
-		echo 'zob'.$dml;
-	}
+			
 			// les commentaires
 			$dml = "delete from bo_po.orders_status_history where  orders_id = '" . $rs->fields["orders_id"] . "'";
 		    $db->Execute($dml);	
@@ -275,6 +289,7 @@ AND orders_id = ". $rs->fields["orders_id"];
 		else if ( $a_creer )
 		{
 			  if ( ( $payment_module_code=='CC' )
+				    || ( $payment_module_code=='OGONE' )
 					|| ( $payment_module_code=='COD')
 					|| ( substr($payment_module_code,0,3)=='MKP')
 					|| ( $payment_module_code=='PAYPAL')

@@ -410,9 +410,10 @@ echo '<font color=red>La date a été modifiée ! </font>';
 			         where orders_products_id=".$opid;
 				  $db->Execute($dml);		  
 		  }
-		  $sql  = "select final_price-(unit_order_price/usd_euro_rate)-approach_price new_margin,margin,products_model,final_price,products_name,orders_id 
-		           from orders_products
-				   where orders_products_id=".$opid;
+		  $sql  = "select final_price-(unit_order_price/usd_euro_rate)-approach_price new_margin,margin,products_model,final_price,products_name,orders.orders_id,orders.database_code 
+		           from orders_products,orders 
+				   where orders.orders_id = orders_products.orders_id
+				   and orders_products_id=".$opid;
 				   
 		  $rsm = $db->Execute($sql);
 		  $current_margin= $rsm->fields['margin'];
@@ -441,9 +442,26 @@ echo '<font color=red>La date a été modifiée ! </font>';
 				  
 				  $spam->set_receiver_email_address('han@easylamps.fr');				  
 				  $spam->send_email();
-				  
+
 				  $spam->set_receiver_email_address('fvaron@easylamps.fr');				  
-				  $spam->send_email();				  
+				  $spam->send_email();
+
+				  
+				  if ( $rsm->fields['database_code']=="eu" )
+				  {
+					  $spam->set_receiver_email_address('monica@easylamps.eu');
+					  $spam->send_email();
+					  
+					  $spam->set_receiver_email_address('pinar@easylamps.eu');				  
+					  $spam->send_email();					  
+
+					  $spam->set_receiver_email_address('ingoriess@easylamps.eu');				  
+					  $spam->send_email();					  
+					  
+				  }
+				  
+//				  $spam->set_receiver_email_address('fvaron@easylamps.fr');				  
+//				  $spam->send_email();				  
 				  
 			  }			  
 			  $dml = "update orders_products 
